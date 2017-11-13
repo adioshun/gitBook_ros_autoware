@@ -1,13 +1,15 @@
 # Summary
 
-* List_ROS
-* List_AutoWare
-* Intro_ROS
-* Intro_AutoWare
+* [Introduction](README.md)
+* List\_ROS
+* List\_AutoWare
+* Intro\_ROS
+* Intro\_AutoWare
 
 ## ROS
 
-- Chapter 0: Course Preview
-
+* ROS_in_5Days
+* [Chapter 0: Course Preview](ros/chapter-0-course-preview.md)
 
 ## AutoWare
+
