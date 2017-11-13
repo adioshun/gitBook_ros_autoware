@@ -1,5 +1,7 @@
 # Summary
 
+## README
+
 * [Introduction](README.md)
 * List\_ROS
 * List\_AutoWare
@@ -8,8 +10,7 @@
 
 ## ROS
 
-* ROS_in_5Days
-* [Chapter 0: Course Preview](ros/chapter-0-course-preview.md)
+* ROS\_in\_5Days
 
 ## AutoWare
 
