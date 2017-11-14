@@ -296,5 +296,64 @@ RESPONSE
 ### 3b.3 How to create your own service message
 
 
+> [Youtube](https://youtu.be/KnoIJq7n3m4?t=10m27s)
+
 
 ### 3b.3 Custom Service Compilation
+
+
+
+
+## 4. Chapter 4a: ROS Actions #Part 1
+
+
+### 4a.1 Playing with the Quadrotor simulation
+
+- `rostopic pub /drone/takeoff std_msgs/Empty "{}"`
+
+- `rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
+
+- `rostopic pub /drone/land std_msgs/Empty "{}"`
+
+
+### 4a.1 What are ROS Actions
+
+- Actions are like asynchronous call to service
+
+- Actions are the same as services. 
+
+- When you call an action, you are calling a functionality that another node is providing. 
+
+- The difference is that when your node calls a service, it must wail the service finished. 
+	- WHen your node calls an action, it doesn't necessarily have to wait for the action to complete. 
+    
+- Hence, an action is an asynchronous call to another node's functionality
+	- The node that provides the functionality has to contain an **action server**. The action server allows other nodes to call that action functionality. 
+    - The node that calls to the functionality has to contain an **action client**. The action clien allow a node to connect to the action server to another node 
+    
+    ![](https://i.imgur.com/Es8OdZE.png)
+		
+
+### 4a.1 Calling an Action Server
+
+
+### 4a.1 Performing other tasks while the Action is in progress
+
+### 4a.1 The axclient
+
+
+
+## 4. Chapter 4b: ROS Actions #Part 2
+
+
+
+### 4b.1 Writing an Action Server
+
+
+### 4b.2 Creating your own Action Server Message
+
+
+### 4b.3 Custom Action Messages compilation
+
+
+
