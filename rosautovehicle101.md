@@ -47,9 +47,18 @@ CatVehicle TestBed: https://cps-vo.org/group/CATVehicleTestbed
 ## 4. Obstacles and Security
 
 - 안전한 차량을 위해서는 다음 두가지가 있어야함 
-    - Obstacle Detection
-    - System Failure Mesures
+    - Obstacle Detection : 본 강의 에서는 Lager를 이용하여 탐지 
+    - System Failure Measures : 여러 방법이 있지만, 본 강의에서는 DeadManSwitch만 다룸
 
 - Control the car movement data flow
     - DeadMansSwitch : when controle communication is lost the autonomous vehicles have to move to a safe state. 
     - ObstacleDetection : When an obstacle is detected the vehicle must stop until the obstacle is removed. 
+    
+    
+![](https://i.imgur.com/HbebYRz.png)
+    
+## 5. CAN-Bus
+
+-rqt_graph
+
+![](https://i.imgur.com/2i0T8OA.png)
