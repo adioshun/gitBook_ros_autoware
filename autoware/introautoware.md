@@ -73,14 +73,13 @@ tar xfz sample_moriyama_150324.tar.gz
 # Run the following script to generate launch files.
 sh my_launch.sh
 
-The following set of launch files should have been generated.
-my_launch/
-my_map.launch		　　　　　　# Load PointClouds and vector maps
-my_sensing.launch	　# Load device drivers
-my_localization.launch	　# Localozation
-my_detection.launch	　# Object detection
-my_mission_planning.launch		　# Path planning
-my_motion_planning.launch		　# Path following
+# my_launch/폴더에 아래 파일들 생성 확인
+my_map.launch		　　　　　# Load PointClouds and vector maps
+my_sensing.launch	　        # Load device drivers
+my_localization.launch	　        # Localozation
+my_detection.launch	　        # Object detection
+my_mission_planning.launch	　# Path planning
+my_motion_planning.launch	　# Path following
 
 
 ```
