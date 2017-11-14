@@ -16,5 +16,5 @@
 
 * Intro\_AutoWare
 * [List\_AutoWare](autoware/listautoware.md)
-* [AutoWare\_ROS\_SDC](autoware/autowareros-sdc.md)
+* [AutoWare\_How\_To\_Learn\_ROS\_SDC \(100%\)](autoware/autowareros-sdc.md)
 
