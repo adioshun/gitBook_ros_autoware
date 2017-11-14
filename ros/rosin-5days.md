@@ -405,6 +405,18 @@ RESPONSE
 
 ### 4a.5 The axclient
 
+- 지금까지의 아래의 두 방법을 이용하여서 action server에 goal을 전송 하였다. 
+	- Publishing directly into the **/goal** topic of the Action Server
+    - Publishing the goal unsing Python **code **
+
+- 좀더 편하고 쉬운 방법이 있다. axclient
+	- The axclient is a GUI tool provided by the actionlib packages
+    - that allows you to interact with an Action Server in a easy/Visual way
+    - 실행법 `rosrun actionlib axclient.py /ardrone_action_server` 
+
+
+![](https://i.imgur.com/U7Zg7ix.png)
+
 
 
 ## 4. Chapter 4b: ROS Actions #Part 2
@@ -413,6 +425,25 @@ RESPONSE
 
 ### 4b.1 Writing an Action Server
 
+- Directly : 
+```
+#goal의 type 정보 읽어 오기 
+rostopic info /fibonacci_as/goal
+
+# pub로 실행
+rostopic pub /fibonacci_as/goal actionlib_tutorials/FibonacciActionGoal "header" TAB + TAB`하여 전체 내용 출력 되면 값 수정 
+
+# 값의 type은 src/..../action폴더의 *.action파일로 확인 가능 
+```
+
+
+- python코드로 실행 
+
+![](https://i.imgur.com/wH6p0iN.png)
+![](https://i.imgur.com/QJZMz5G.png)
+![](https://i.imgur.com/khw4pqQ.png)
+
+> [코드설명]()
 
 ### 4b.2 Creating your own Action Server Message
 
