@@ -191,6 +191,7 @@ print "hello world"
 
 - create a subscriber node that listens to the /counter topic and each time it reads something it calls a function that does a print of the msg. 
 
+- 당장은 아무 반응 없음, But when you executed the rostopic pub command, you published a message into the /counter topic, so the function has printed number
 
 ### 2b.2 Custom Topic Message Compilation
 
