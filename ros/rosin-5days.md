@@ -104,12 +104,12 @@ print "hello world"
 - ROS nodes are basically programs made in ROS , 실행중인 프로세스? 
     - `rosnode list`
     - 'rosnode infor /Obiwan`
-    - 'rostopic echo /Obiwan` # 실시간으로 정보 출력 
+    - 'rosnode kill /topic_puvlisher`
     
 
 ### 2.5. Compiling a ROS Package
 
-- ./catkin_ws로 이동하여 진행 하여야 함 
+- `./catkin_ws`로 이동하여 진행 하여야 함 
 - `catkin_make`로 컴파일 수행 
     - src폴더 밑의 모든것 컴파일, 일부 패키지만 컴파일 하고 싶으면 `catkin_make --only-pkg-with-deps <pagage_name>`으로 컴파일 
 
@@ -147,6 +147,7 @@ print "hello world"
 
 - `rostopic list` 
 - `rostopic list | grep '/{topic이름}` 
+- `rostopic echo /Obiwan` # 실시간으로 정보 출력 
 
 
 ![](https://i.imgur.com/Dln3vPe.png)
@@ -155,7 +156,7 @@ print "hello world"
 
 - A **Publisher** is a node that keeps publishing a message into a topic
 
-- A **topic** is a channel that acts as a pipe, where oter ROS nodes can either publish or read information. 
+- A **topic** is a channel that acts as a pipe, where oter ROS nodes can either publish or read information. 소켓??
     
     - To get a list of available topics `rostopic list`
     
@@ -181,7 +182,14 @@ print "hello world"
 
 ### 2b.1 Topic Subscriber
 
+- Publisher와 반대 개념, To read information from topic
 
+- 테스트 전에 publish를 위해 임시 실행 `rostopic pub <topic_name> <message_type> <value>` eg. `rostopic pub /count std_msgs/int32 5`
+    - This command will publish the message you specify with the value you specify, in the topic you specify. 
+    
+![](https://i.imgur.com/k7VWK0B.png)
+
+- create a subscriber node that listens to the /counter topic and each time it reads something it calls a function that does a print of the msg. 
 
 
 ### 2b.2 Custom Topic Message Compilation
