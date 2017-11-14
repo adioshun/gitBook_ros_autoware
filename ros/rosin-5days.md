@@ -236,7 +236,6 @@ float32 days
     - It's like launching a new **thread**
     - When your ROS program calls an action, your program can perform other tasks while the action is being performed in another thread. 
     
-    
 
 ### 3a.2 Services Introduction
 
