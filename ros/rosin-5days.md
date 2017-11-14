@@ -1,5 +1,7 @@
 # ROS in 5 Days.
 
+- [강의 목차](https://www.robotigniteacademy.com/en/course/ros-in-5-days/details/)
+- [Youtube](https://www.youtube.com/watch?v=DBFYZRMLr70&list=PLK0b4e05LnzZWg_7QrIQWyvSPX2WN2ncc)
 
 ## 0. Chapter 0: Course Preview 
 
@@ -150,24 +152,16 @@ print "hello world"
 
 ![](https://i.imgur.com/Dln3vPe.png)
 
-```
-실습 코드
-```
-
-- node초기화 
 - create a Publisher that keeps publishing into the '/counter' topic a sequence of integer.
 
-- 즉, A Publisher is a node that keeps publishing a message into a topic
+- A **Publisher** is a node that keeps publishing a message into a topic
 
-- A topic is a channel that acts as a pipe, where oter ROS nodes can either publish or read information. 
-
-- To get a list of available topics `rostopic list`
-
-- To read the information that is being published in a topic `rostopic echo <topic_name>`
-
-
-
-
-
+- A **topic** is a channel that acts as a pipe, where oter ROS nodes can either publish or read information. 
+    
+    - To get a list of available topics `rostopic list`
+    
+    - To read the information that is being published in a topic `rostopic echo <topic_name>`
+    - 마지막 메시지만 출력 `rostopic echo <topic_name> -n1`
+    - To get information about a certain topic `rostopic info <topic_name>
 
 ### 3.2 ROS Messages
