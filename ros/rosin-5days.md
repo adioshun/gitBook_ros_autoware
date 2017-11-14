@@ -248,16 +248,36 @@ float32 days
 - To list the available service `rosservice list` 
 - To get detailed inforamtion `rosservice info {name_service}`
 
-
-    
+   
     
 
 ### 3a.2 Services Introduction
 
 ### 3a.3 How to call a ROS Service
 
+- `rosservice call /the_service_name "{Name}" ` 
 
 
+###### [실습] How to know the structure of the service message used by the service 
+
+1. you can do a `rosservie info` to know the type of service message that it uses `rosservice infor /name_of_the_service`
+2. This will return the `name_of_the_package/Name_of_Service_message`
+3. Then you can explore the structure of that service message with the `rossrv show Name_of_the_package/Name_of_Service_message`
+	- `rossrv show gazebo_msgs/DeleteModel`
+
+###### [참고] Service message have TWO pars
+
+```
+REQUEST
+--- 
+RESPONSE
+```
+- REQUEST contains a string called `model_name`
+- `---` : Three dashes means service message 
+- RESPONSE is composed of a boolen named `success`, and a string named `status_message`
 
 
-## Chapter 3b: ROS Services #Part 1
+![](https://i.imgur.com/iyPW8Em.png)
+
+
+## Chapter 3b: ROS Services #Part 2
