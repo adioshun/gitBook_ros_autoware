@@ -18,7 +18,8 @@
 
 ## 4. Youtube
 
-
+- [ROS Tutorials | ROS Basics for Beginners](https://www.youtube.com/watch?v=EnSpiaD4S1g&list=PLK0b4e05LnzZWg_7QrIQWyvSPX2WN2ncc&index=2): 1~4 
+    - [[ROS tutorial for beginners] Chapter 2. ROS Basic Concepts.](https://www.youtube.com/watch?v=-GZP81bTuO8)
 
 ## 6. Material (Pdf, ppt)
 

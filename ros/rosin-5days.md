@@ -45,3 +45,61 @@ roslaunch action_demo_client client_launch.launch
 
 ### 0.4 Debugging Tools Unit (Chapter 9)
 
+
+# Chapter 2. ROS Basic Concepts.
+
+- roslaunch <package_name> <launch file>
+
+## 2.1 `roslaunch <package_name> <launch file>`
+
+### A. package
+
+- All the files that a specific ROS programs contains 
+    - launch folder : *.launch파일들 보관 
+    - src folder
+    - CMakeLists.txt
+    - packages.xml : inforamtion & dependency 
+    
+- go to the ROS package `roscd <package_name>`
+
+
+###### [cat *.launch]
+
+- tag형태의 명령어 집합
+- node 태그가 중요 
+    - pkg attribute = name of the package
+    - type attribute
+    - name attribute
+    - output attribute
+    
+
+### B. 나만의 패키지 만들기 
+
+- 사용자용 패키지 생성을 위해서는 `catkin_ws`에서 작업해야 함
+
+- 하부 `src`폴더에서 패키지 생성 : `catkin_create_pkt <새 패키지 이름> <패키지 Dependencies>`
+    - `rospack list`로 확인 가능 
+
+- `catkin_ws/my_package/src/`에 `my_ros_program.py`파일 생성 
+
+```python
+#! /usr/bin/env python
+import rospy
+
+rospy.init_node('ObiWan')
+print "hello world"
+
+```
+
+- 실행 : `roslaunch 
+
+### B. ROS Noede 
+
+- ROS nodes are basically programs made in ROS , 실행중인 프로세스? 
+    - `rosnode list`
+    - 'rosnode infor /Obiwan`
+    
+
+
+
+
