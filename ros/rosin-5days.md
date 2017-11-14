@@ -238,12 +238,17 @@ float32 days
     
 ###### [실습] start_demo.launch
 
+- `roslaunch iri_wam_aff_demo start_demo.launch` 실행
+
 - The launch file has launched two nodes 
     - `/iri_wam_reproduce_trajectory` : provides the `/execute_trajectoru` **service**
     - `/iri_wam_aff_demo` : Performs call to that service. 
     
   
-   
+- To list the available service `rosservice list` 
+- To get detailed inforamtion `rosservice info {name_service}`
+
+
     
     
 
@@ -256,13 +261,3 @@ float32 days
 
 
 ## Chapter 3b: ROS Services #Part 1
-
-
-
-
-
-
-
-
-
-
