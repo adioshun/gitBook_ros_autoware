@@ -335,7 +335,7 @@ RESPONSE
     ![](https://i.imgur.com/Es8OdZE.png)
     
     
-- So when 
+![](https://i.imgur.com/i4XM7p6.png)
 		
 
 - 서비스의 리스트를 볼때는 `rosservice list`
