@@ -328,13 +328,26 @@ RESPONSE
 	- WHen your node calls an action, it doesn't necessarily have to wait for the action to complete. 
     
 - Hence, an action is an asynchronous call to another node's functionality
-	- The node that provides the functionality has to contain an **action server**. The action server allows other nodes to call that action functionality. 
-    - The node that calls to the functionality has to contain an **action client**. The action clien allow a node to connect to the action server to another node 
+	- The node that **provides** the functionality has to contain an **action server**. The action server allows other nodes to call that action functionality. 
+    - The node that **calls** to the functionality has to contain an **action client**. The action clien allow a node to connect to the action server to another node 
     
     ![](https://i.imgur.com/Es8OdZE.png)
 		
 
+- 서비스의 리스트를 볼때는 `rosservice list`
+- 액션의 리스트를 볼때는 ~~`rosaction list`~~ 가 아니라 `rostopic list`
+
+- top`ic과 액션을 어떻게 비교 하나? 일반적으로 아래의 5가지 구조이므로 이걸로 기억 하기 
+	- `/{}_action_server/cancel`
+	- `/{}_action_server/feedback`
+	- `/{}_action_server/goal`
+	- `/{}_action_server/result`
+	- `/{}_action_server/status`
+
+
 ### 4a.1 Calling an Action Server
+
+
 
 
 ### 4a.1 Performing other tasks while the Action is in progress
