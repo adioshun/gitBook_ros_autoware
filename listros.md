@@ -45,6 +45,10 @@
 
 - [ROS Development Studio](https://rds.theconstructsim.com/simulations/)
 
+- [ADAS Development Vehicle Kit](http://wiki.ros.org/Robots/ADAS_Development_Vehicle_Kit): 자율주행차를 위한 ROS 패키지 
+
+- [Demo of Prius in ROS/GAZEBO](https://github.com/osrf/car_demo): [홈페이](https://www.osrfoundation.org/simulated-car-demo/)
+
 ## 8. Research Group / Conference 
 
 http://www.theconstructsim.com

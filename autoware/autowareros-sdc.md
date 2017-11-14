@@ -31,6 +31,8 @@
 
 ## 3. 학습 방법 
 
+> [5 ROS Learning Methods: which one is the best for you?](https://www.youtube.com/watch?v=udHlvH6TGvo)
+
 ### 3.1 Learn ROS
 
 ### 3.2 Learn ROS Navigation 
