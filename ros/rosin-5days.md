@@ -236,6 +236,16 @@ float32 days
     - It's like launching a new **thread**
     - When your ROS program calls an action, your program can perform other tasks while the action is being performed in another thread. 
     
+###### [실습] 
+
+- The launch file has launched two nodes 
+    - `/iri_wam_reproduce_trajectory` : provides the `/execute_trajectoru` **service**
+    - `/iri_wam_aff_demo` : Performs call to that service. 
+    
+  
+   
+    
+    
 
 ### 3a.2 Services Introduction
 
