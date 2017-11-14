@@ -163,7 +163,7 @@ print "hello world"
 
 - To get a list of available topics `rostopic list`
 
-
+- To read the information that is being published in a topic `rostopic echo <topic_name>`
 
 
 
