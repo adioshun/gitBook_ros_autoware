@@ -302,6 +302,7 @@ RESPONSE
 ### 3b.3 Custom Service Compilation
 
 
+---
 
 
 ## 4. Chapter 4a: ROS Actions #Part 1
@@ -316,7 +317,7 @@ RESPONSE
 - `rostopic pub /drone/land std_msgs/Empty "{}"`
 
 
-### 4a.1 What are ROS Actions
+### 4a.2 What are ROS Actions
 
 - Actions are like asynchronous call to service
 
@@ -337,7 +338,7 @@ RESPONSE
 - 서비스의 리스트를 볼때는 `rosservice list`
 - 액션의 리스트를 볼때는 ~~`rosaction list`~~ 가 아니라 `rostopic list`
 
-- top`ic과 액션을 어떻게 비교 하나? 일반적으로 아래의 5가지 구조이므로 이걸로 기억 하기 
+- `top`과 `action`을 어떻게 비교 하나? 일반적으로 아래의 5가지 액션 topic만 쓰는 구조이므로 이걸로 기억 하기 
 	- `/{}_action_server/cancel`
 	- `/{}_action_server/feedback`
 	- `/{}_action_server/goal`
@@ -345,14 +346,43 @@ RESPONSE
 	- `/{}_action_server/status`
 
 
-### 4a.1 Calling an Action Server
+### 4a.3 Calling an Action Server
 
 
+- calling an action server mean sending a message to it
+
+- In the same way as with **topics** and **services**, it all works by passing messages around
+	- The message of **topic** is composed of a single part : the inforatmion the topic provides
+    - The message of a **service** has tow part : the goal and the response
+    - The message of an **action** serviver is devided in tree part : the goal, the result, and the feedback. 
+
+- All of the action messages used are defined in the **action directory** of their package
+	- 해당 `package`에 가면 `action이란 폴더`가 있음. 해당 폴더 안에 `{}.action`이란 파일 존재 
 
 
-### 4a.1 Performing other tasks while the Action is in progress
+![](https://i.imgur.com/2VOs6hT.png)
 
-### 4a.1 The axclient
+- goal : COnsist of variable called nseconds of type int32. 
+	- This int32 type is a standard ROS message, therefore, it can be foun in the `std_msgs_package`
+    - Because it's a standard package of ROS, it's net needed to indicate the package where the int32 can be found
+    
+- Result : Consis of a variable called **allPictures**, an array of type **CompressedImages[]** found in the `sensor_msgs_package`
+
+- feedback : consist of a variable called **lastImage** of type **CompressedImages[]** found in the `sensor_msgs_package`
+	- The feedback is a message that the action server generates every once in a while to indicate how the action is going 
+    
+    
+###### [정리] How to call an action server
+
+- The way you call an action server is by implementing an **action client**
+
+![](https://i.imgur.com/XeHqf4S.png)
+![](https://i.imgur.com/0bV3wBM.png)
+    
+
+### 4a.4 Performing other tasks while the Action is in progress
+
+### 4a.5 The axclient
 
 
 
