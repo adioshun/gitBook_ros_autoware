@@ -195,3 +195,53 @@ print "hello world"
 
 ### 2b.2 Custom Topic Message Compilation
 
+- How to prepare `CMakeLists.txt` and `package.xml` for custom topic message compilation
+
+1. Create a directory named `msg` inside your package
+2. Inside this directory, create a file named `Name_of_your_message.msg` eg. `Age.msg`
+3. Modify `CMakeLists.txt file`
+4. Modify `package.xml` file
+5. Compile 
+6. Use in code 
+
+
+```
+# ./src/my_publisher/msg/Age.msg
+
+float32 years
+float32 months
+float32 days
+```
+
+> CMakeList.txt 수정하는법 : [Youtube](https://youtu.be/GxpS18INc9s?t=16m30s)
+
+
+---
+
+## Chapter 3a: ROS Services #Part 1
+
+### 3a.1 Topics - Services - Actions
+
+
+
+
+
+### 3a.2 Services Introduction
+
+### 3a.3 How to call a ROS Service
+
+
+
+
+
+## Chapter 3b: ROS Services #Part 1
+
+
+
+
+
+
+
+
+
+
