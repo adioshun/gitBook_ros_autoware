@@ -255,7 +255,7 @@ float32 days
 
 ### 3a.3 How to call a ROS Service
 
-- `rosservice call /the_service_name "{Name}" ` 
+- `rosservice call /the_service_name "TAB + TAB" ` 
 
 
 ###### [실습] How to know the structure of the service message used by the service 
@@ -283,4 +283,18 @@ RESPONSE
 ## Chapter 3b: ROS Services #Part 2
 
 
-dd
+### 3b.1 How to give a Service
+
+![](https://i.imgur.com/vcqgbx7.png)
+
+- `rospy.Service('/my_service', Empty, my_callback)` 
+	- `my_service` 라는 이름의 서비스 생성 
+    - `Empty` 라는 이름의 메시지 `Name of the service that we will use`
+    - `my_callback` 서비스 호출시 실행할 함수
+
+
+### 3b.3 How to create your own service message
+
+
+
+### 3b.3 Custom Service Compilation
