@@ -16,4 +16,5 @@
 
 * Intro\_AutoWare
 * List\_AutoWare
+* [AutoWare\_ROS\_SDC](autoware/autowareros-sdc.md)
 
