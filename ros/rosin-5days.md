@@ -333,6 +333,9 @@ RESPONSE
     - The node that **calls** to the functionality has to contain an **action client**. The action clien allow a node to connect to the action server to another node 
     
     ![](https://i.imgur.com/Es8OdZE.png)
+    
+    
+- So when 
 		
 
 - 서비스의 리스트를 볼때는 `rosservice list`
@@ -395,6 +398,8 @@ RESPONSE
 
 ###### [코드] get_state()
 ![](https://i.imgur.com/Lm6RSMg.png)
+
+
 
 
 
