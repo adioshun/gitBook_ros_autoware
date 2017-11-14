@@ -3,9 +3,9 @@
 - [강의 목차](https://www.robotigniteacademy.com/en/course/ros-in-5-days/details/)
 - [Youtube](https://www.youtube.com/watch?v=DBFYZRMLr70&list=PLK0b4e05LnzZWg_7QrIQWyvSPX2WN2ncc)
 
-## 0. Chapter 0: Course Preview 
+## 1. Chapter 1: Course Preview 
 
-### 0.1 Topics Unit (Chapters 3 and 4)
+### 1.1 Topics Unit (Chapters 3 and 4)
 
 - ROS handles almost all its communications through topics. 
 
@@ -17,14 +17,14 @@ roslaunch publisher_example move.launch
 
 
 
-### 0.2 Services Units (Chapters 5 and 6)
+### 1.2 Services Units (Chapters 5 and 6)
 - Services allow you to code a specific functionaility for your robot
     - Service Server, which provides the functionality to anyone who wants to use it (call it). `roslaunch service_demo service_launch.launch`
     - Service Client, who is the one who calls/requests the service functionality.`rosservice call /service_demo "{}"`
     
     
 
-### 0.3 Actions Unit (Chapters 7 and 8)
+### 1.3 Actions Unit (Chapters 7 and 8)
 
 
 - 액션과 서비스는 함수를 코딩할수 있게 한다는 점에서 같다. `Actions are similar to services, in the sense that they also allow you to code a functionality for your robot, and then provide it so that anyone can call it. `
@@ -45,7 +45,7 @@ roslaunch action_demo action_launch.launch
 roslaunch action_demo_client client_launch.launch
 ```
 
-### 0.4 Debugging Tools Unit (Chapter 9)
+### 1.4 Debugging Tools Unit (Chapter 9)
 
 ---
 
@@ -67,6 +67,7 @@ roslaunch action_demo_client client_launch.launch
     
 - go to the ROS package `roscd <package_name>`
 
+![](https://i.imgur.com/LF62ccd.png)
 
 ###### [cat *.launch]
 
@@ -137,12 +138,10 @@ print "hello world"
 
 ---
 
-## Chapter 3. ROS Topics - part 1
-
-> [Youtube](https://www.youtube.com/watch?v=wOlfT8GUcCk&t=156s)
+## Chapter 2a. ROS Topics - part 1
 
 
-### 3.1 Topic Publisher
+### 2a.1 Topic Publisher
 
 - A topic is like a pipe. Nodes use topics to publish information for other nodes so they can communicate. 
 
@@ -162,7 +161,28 @@ print "hello world"
     
     - To read the information that is being published in a topic `rostopic echo <topic_name>`
     - 마지막 메시지만 출력 `rostopic echo <topic_name> -n1`
-    - To get information about a certain topic `rostopic info <topic_name>
+    - To get information about a certain topic `rostopic info <topic_name>`
 
-### 3.2 ROS Messages
+### 2a.2 ROS Messages
+
+- Topics handle information through messages
+
+- Messages can be of many types. 
+
+- Messages are defined in `.msg`files, which are located inside a `msg`directory of a package. 
+
+    - To get information about a message `rosmsg show <message>` , `rosmsg show std_msgs/Int32`
+    
+ 
+  
+     
+    
+## Chapter 2b. ROS Topics - part 2
+
+### 2b.1 Topic Subscriber
+
+
+
+
+### 2b.2 Custom Topic Message Compilation
 
