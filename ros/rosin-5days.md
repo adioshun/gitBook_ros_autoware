@@ -380,7 +380,23 @@ RESPONSE
 ![](https://i.imgur.com/0bV3wBM.png)
     
 
+> [코드설명](https://youtu.be/LoRXdNMuslQ?t=22m22s)
+
+
 ### 4a.4 Performing other tasks while the Action is in progress
+
+- The simpleActionClient objects have two functions that can be used for knowing if the action that is being performed has finished, and how:
+	- **wait_for_result()** 
+    - **get_state()** : pending(0), active(1), done(2), warn(3), error(4), 2보다 낮으면 아직 작업중이므로...
+
+###### [코드] wait_for_result()
+![](https://i.imgur.com/dZ1cwAA.png)
+
+
+###### [코드] get_state()
+![](https://i.imgur.com/Lm6RSMg.png)
+
+
 
 ### 4a.5 The axclient
 
