@@ -165,3 +165,4 @@ print "hello world"
     - To get information about a certain topic `rostopic info <topic_name>
 
 ### 3.2 ROS Messages
+
