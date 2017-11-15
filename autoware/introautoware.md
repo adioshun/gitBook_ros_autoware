@@ -94,4 +94,13 @@ trajectories in the lanes are calculated kinematically.
 ![](https://i.imgur.com/smNBB8h.png)
 
 
+### 1.4 Utilities and Others
+
+- ros/src/util/ : Runtime Manager, sample data, pseudo-drivers
+- ui/tablet/ : Smart phone applications
+- vehicle/ : Vehicle control, vehicle data acquisition
+
+
+
+
 

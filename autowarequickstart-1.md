@@ -16,10 +16,12 @@
 
 
 - 데이터셋 준비 
+
 ```
 cd ~
 mkdir .autoware
 cd ~/.autoware
+
 
 # A script for generating a demo launch file:
 wget http://db3.ertl.jp/autoware/sample_data/my_launch.sh
@@ -37,6 +39,7 @@ tar xfz sample_moriyama_150324.tar.gz
 ```
 
 - Run my_launch.sh
+
 ```
 # Run the following script to generate launch files.
 sh my_launch.sh
@@ -53,6 +56,11 @@ my_motion_planning.launch	　# Path following
 ```
 
 #### B. Launch Autoware
+
+```
+/src/Autoware/ros
+bash ./run
+```
 
 ### 2.2 Autoware on a real vehicle
 Drive a real vehicle with Autoware autonomously.
