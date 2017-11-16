@@ -16,8 +16,16 @@
   * [ROS\_Action](ros/rosin-5days/rosaction.md)
 * [ROS\_Perception \(0%\)](rosperception.md)
 * [ROS\_AutoVehicle101 \(30%\)](rosautovehicle101.md)
+
+
+## ROS Tools
+
 * [ROS\_RViz](rosrviz.md)
 * [ROS\_Gazebo](rosgazebo.md)
+* [ROS\_ROSbag](rosrosbag.md)
+* [ROS\_rqt\_graph](rosrqt-graph.md)
+
+
 
 ## AutoWare
 
@@ -27,4 +35,6 @@
 * [AutoWare\_QuickStart\_1](autowarequickstart-1.md)
 * [AutoWare\_UserManual](autoware/autowareusermanual.md)
   * [AutoWare\_Operating](autoware/autowareusermanual/autowareoperating.md)
+  
+  
 
