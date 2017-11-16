@@ -70,6 +70,8 @@
  로봇 운영체제 강좌: 내비게이션 이론편
 ```
 
+
+
 ## 4. Youtube
 
 - [ROS Tutorials | ROS Basics for Beginners](https://www.youtube.com/watch?v=EnSpiaD4S1g&list=PLK0b4e05LnzZWg_7QrIQWyvSPX2WN2ncc&index=2): 1~4 
@@ -77,7 +79,7 @@
 
 ## 6. Material (Pdf, ppt)
 
-- ['ROS 로봇 프로그래밍](https://github.com/robotpilot/ros-seminar): 로봇틱스, 표윤석 박사, ppt
+- ['ROS 로봇 프로그래밍](https://github.com/robotpilot/ros-seminar): [추천] 로봇틱스, 표윤석 박사, ppt 13강의 
 
 
 - [ROS 1차 강의](https://www.slideshare.net/yoonseokpyo/20160406-ros-1-for): 로봇 운영체제 ROS 개론, ppt 100
