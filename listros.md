@@ -1,5 +1,7 @@
 # ROS 
 
+- [공식 한글 메뉴얼](http://wiki.ros.org/ko/ROS/Tutorials)
+
 ## 1. List
 
 
@@ -70,7 +72,7 @@
  로봇 운영체제 강좌: 내비게이션 이론편
 ```
 
-
+- [pinkwink](http://pinkwink.kr/888)
 
 ## 4. Youtube
 
