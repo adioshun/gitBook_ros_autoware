@@ -3,6 +3,7 @@
 ## README
 
 * [Cover](README.md)
+* [ROS\_RViz](rosrviz.md)
 
 ## ROS
 
