@@ -17,7 +17,7 @@
     - CMakeLists.txt
     - packages.xml : inforamtion & dependency 
     
-- go to the ROS package `roscd <package_name>`
+
 
 ![](https://i.imgur.com/LF62ccd.png)
 
@@ -35,12 +35,14 @@
 
 - 사용자용 패키지 생성을 위해서는 `catkin_ws`에서 작업해야 함
 
-```
-작업 폴더 catkin_ws만들기 
+```bash 
+# 작업 폴더 catkin_ws만들기 
 1. mkdir -p ~/catkin_ws/src
-2. cd ~/catkin_ws
+2. cd ~/catkin_ws/src
+3. catkin_init_workspace # 
+2. cd ~/catkin_ws/
 3. catkin_make #build, devel, src 폴더 자동 생성 
-4. devel/setup.bash 실행 # ROS 팩키지 변수가 저장 `echo #ROS_PACKAGE_PATH`
+4. source devel/setup.bash 실행 # ROS 팩키지 변수가 저장 `echo #ROS_PACKAGE_PATH`
 
 ```
 
@@ -48,7 +50,7 @@
 - 하부 `src`폴더에서 패키지 생성 : `catkin_create_pkt <새 패키지 이름> <패키지 Dependencies>`
     - `rospack list`로 확인 가능 
 
-- `catkin_ws/my_package/src/`에 `my_ros_program.py`파일 생성 
+- `catkin_ws/src/my_package/`에 `my_ros_program.py`파일 생성 
 
 ```python
 #! /usr/bin/env python

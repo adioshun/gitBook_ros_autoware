@@ -7,6 +7,7 @@
 ## ROS
 
 * [Intro\_ROS](introros.md)
+  * [ROS\_Command](introros/roscommand.md)
 * [List\_ROS](listros.md)
 * [ROS\_in\_5Days \(90%\)](ros/rosin-5days.md)
   * [ROS\_Basic](ros/rosin-5days/rosbasic.md)
