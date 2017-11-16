@@ -35,6 +35,16 @@
 
 - 사용자용 패키지 생성을 위해서는 `catkin_ws`에서 작업해야 함
 
+```
+작업 폴더 catkin_ws만들기 
+1. mkdir -p ~/catkin_ws/src
+2. cd ~/catkin_ws
+3. catkin_make #build, devel, src 폴더 자동 생성 
+4. devel/setup.bash 실행 # ROS 팩키지 변수가 저장 `echo #ROS_PACKAGE_PATH`
+
+```
+
+
 - 하부 `src`폴더에서 패키지 생성 : `catkin_create_pkt <새 패키지 이름> <패키지 Dependencies>`
     - `rospack list`로 확인 가능 
 
