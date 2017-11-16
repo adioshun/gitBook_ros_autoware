@@ -27,14 +27,8 @@
     * a node writes messages \(publish\) into a topic and 
     * another node reads the messages \(subscribe\) of the topic.
 
-* File components
 
-  * bag file \(ROSBAG\)
-    * In ROS, all the messages of topics are recorded and time-stamped into a **.bag** file `called ROSBAG`. 
-    * This file can be used for replaying the messages on **RViz** as same timing as recording. 
-  * Launch file
-    * A “Launch” file is used to **start multiple nodes at the same time**. 
-    * The launch file contains the **nodes **to be started and their parameters written in **XML format**.
+
 
 
 
@@ -161,49 +155,6 @@
   * CMakeLists.txt 빌드 설정
   * package.xml  패키지 설정
 
-
-
-## 5. 도구
-
-### 5.1 RViz
-
-* 데이터 가시화를 위한 rviz 프로그램이 있다.
-
-```
-$ sudo apt-get install ros-indigo-rviz
-$ rosrun rviz rviz
-```
-
-### 5.2 rqt
-
-```
-$ sudo apt-get install ros-indigo-rqt ros-indigo-rqt-common-plugins
-$ rqt_plot
-$ rqt
-
-$ sudo apt-get install ros-indigo-uvc-camera
-$ rosrun uvc_camera uvc_camera_node
-$ rqt
-
-$ rosrun turtlesim turtlesim_node
-$ rosrun turtlesim turtle_teleop_key
-$ rosrun uvc_camera uvc_camera_node
-
-$ rosrun turtlesim turtlesim_node
-$ rqt
-
-$ rqt_plot /turtle1/pos
-
-$ rosrun turtlesim turtle_teleop_key
-
-$ rosrun uvc_camera uvc_camera_node
-$ rosbag record /image_raw
-$ rqt
-```
-
-### 5.3 Gazebo
-
-* 3차원 시뮬레이션을 위한 gazebo 프로그램이 있다.
 
 
 

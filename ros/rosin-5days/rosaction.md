@@ -118,7 +118,8 @@
 
 ### 4b.1 Writing an Action Server
 
-- Directly : 
+- Directly 
+
 ```
 #goal의 type 정보 읽어 오기 
 rostopic info /fibonacci_as/goal
@@ -127,6 +128,7 @@ rostopic info /fibonacci_as/goal
 rostopic pub /fibonacci_as/goal actionlib_tutorials/FibonacciActionGoal "header" TAB + TAB`하여 전체 내용 출력 되면 값 수정 
 
 # 값의 type은 src/..../action폴더의 *.action파일로 확인 가능 
+
 ```
 
 
