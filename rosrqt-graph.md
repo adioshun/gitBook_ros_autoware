@@ -54,15 +54,25 @@
         - RViz | 3차원 시각화 툴인 RViz 플러그인
         - TF Tree | tf 관계를 트리로 나타내는 그래프 뷰 형식의 플러그인
     
-## 주요 플러그인 : rqt_plot 
+## rqt_plot 
 
 rqt_plot 은 2차원 데이터 플롯 툴이다. 플롯이라하면 좌료를 그리다라는 의미이다. 즉, ROS 메시지를 받아서 이를 좌표에 뿌리게 되는 것을 의미한다. 
 
 
 
+## RQT ServiceCaller
+
+![](https://i.imgur.com/I2n0fED.png)
+
+- 메뉴 중에 플러그인(Plugins)에서 ServiceCaller 를 선택
+
+여기서 상단의 Service 에서 서비스명을 선택해주면 Request 에 서비스요청에 필요한 정보가 보인다. 서비스 요청을 해주기 위해서는 각 요청 정보의 Expressin에 정보를 기입해주면 된다. 필자는 a 란에 10, b란에 5를 입력하였다. 그 뒤, 오른쪽 상단의 녹색 전화기 모양의 Call 아이콘을 클릭해주면 서비스 요청이 실행되고, 화면 하단에 Response 란에 서비스 응답에 대한 결과가 표시된다. 위 10번에서 설명한 rosservice call 은 터미널에서 바로 실행이라는 장점이 있지만 리눅스 및 ROS 명령어 사용에 익숙하지 않은 사람에게는 ServiceCaller 를 추천한다.
+
+
+## RQT ServiceCaller
 
 
 
-![](http://wiki.ros.org/rqt_graph?action=AttachFile&do=get&target=snap_rqt_graph_moveit_demo.png)
+![](https://i.imgur.com/CzN3S2Y.png)
 
 [rqt_graph](http://wiki.ros.org/rqt_graph) displays a visual graph of the processes running in ROS and their connections.- 
