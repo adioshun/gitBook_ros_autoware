@@ -3,7 +3,6 @@
 ## README
 
 * [Cover](README.md)
-* [ROS\_RViz](rosrviz.md)
 
 ## ROS
 
@@ -16,6 +15,7 @@
   * [ROS\_Action](ros/rosin-5days/rosaction.md)
 * [ROS\_Perception \(0%\)](rosperception.md)
 * [ROS\_AutoVehicle101 \(30%\)](rosautovehicle101.md)
+* [ROS\_RViz](rosrviz.md)
 * [ROS\_Gazebo](rosgazebo.md)
 
 ## AutoWare

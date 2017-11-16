@@ -4,8 +4,6 @@
 
 - [Youtube](https://www.youtube.com/watch?v=49eNObyWjzg&list=PLK0b4e05LnzZ73iWczaQfsm3h8lP7JT33)
 
-##
-
 ## 2. Vision Basics Blob Tracking
 
 - [Youtube](https://www.youtube.com/watch?v=ukGa74saFfM)
