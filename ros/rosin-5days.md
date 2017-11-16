@@ -1,4 +1,4 @@
-# ROS in 5 Days.
+# ROS in 5 Days. 강의 전에 Preview
 
 - [강의 목차](https://www.robotigniteacademy.com/en/course/ros-in-5-days/details/)
 - [Youtube](https://www.youtube.com/watch?v=DBFYZRMLr70&list=PLK0b4e05LnzZWg_7QrIQWyvSPX2WN2ncc)
