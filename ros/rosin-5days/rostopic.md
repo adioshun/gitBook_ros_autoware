@@ -1,6 +1,7 @@
 ## Chapter 2a. ROS Topics - part 1
 
 
+
 ### 2a.1 Topic Publisher
 
 - A topic is like a pipe. Nodes use topics to publish information for other nodes so they can communicate. 

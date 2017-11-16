@@ -1,5 +1,13 @@
 # ROS
 
+> 참고 : [오로카](http://cafe.naver.com/openrt/2500)
+
+- 2007년 미국의 스탠포드 대학 인공지능 연구소(AI LAB)가 진행하던 STAIR(STanford AI Robot) 프로젝트를 위해 Morgan Quigley 이 개발한 "Switchyard" 이라는 시스템에서 시작
+- 2008년 미국의 로봇 전문 기업  윌로우게러지라는 회사가 이어받아 ROS라는 이름으로 개발하기 시작
+- 2010년 1월 22일날 ROS 1.0 이라는 세상에 나왔다. 
+
+
+
 ## 1. ROS Features
 
 * ROS provides library and tools for robotic software development.
@@ -27,6 +35,10 @@
   * Launch file
     * A “Launch” file is used to **start multiple nodes at the same time**. 
     * The launch file contains the **nodes **to be started and their parameters written in **XML format**.
+
+
+
+  
 
 ## 2. 용어 정리
 
@@ -59,7 +71,12 @@
 
   * 노드간 접속과 질의 응답은 XMLRPC를 사용하고, 메시지 통신은 노드간 직접 통신이므로 TCPPROS를 이용한다. 
   * URI주소는 노드가 실행중인 컴퓨터에 저장된 ROS\_HOSTNAME 환경 변수 값으로 URI주소를 사용한다.
-
+  
+- ROS nodes are basically programs made in ROS , 실행중인 프로세스? 
+  - `rosnode list`
+  - 'rosnode infor /Obiwan`
+  - 'rosnode kill /topic_puvlisher`
+  
 ### 2.3 패키지
 
 * ROS 기본단위이다.
@@ -97,31 +114,23 @@
 
 * ROS는 CMake를 ROS에 맞도록 특화된 캐킨 빌드 시스템을 만들었다.
 
-### 2.8 etc.
 
-* ROS빌드 - rosbuild는 catkin 빌드 시스템 이전에 사용된 것이다.
+### 2.8 Parameter Server 
 
-* roscore - 멀티 roscore를 지원하는 특수한 경우를 제외하고, 같은 네트워크에서 하나만 구동된다.
+- ROS uses to store parameters
+- This parameters can be used by Nodes at runtime and are normally used for static data, such as configure parameters
+    
+    - To get a list of parameters : `rosparam list`
+    
+    - To get a value of a parameter : `rospapam get <parameter_name?
+    
+    - To set a value to a parameter : `rosparam set <parameter_name> <value>`
 
-* 파라미터 - 노드에서 사용하는 파라메터이다.
 
-* 파라미터 서버 - 패키지에서 파라미터를 사용할 때, 각 파라미터를 등록하는 서버를 말한다.
-
-* rosrun - ROS 기본 실행 명령이다.
-
-* roslaunch - 여러 노드를 실행하는 명령이다. 패키지의 파라미터, 노드 이름, 노드 네임스페이스, ROS\_ROOT, ROS\_PACKAGE\_PATH, 환경변수 등 옵션을 제공한다.
-
-  * \*.launch파일을 이용해 실행 노드에 대한 설정을 한다. 
-
-* bag - 주고 받는 메시지의 데이터를 저장할 수 있다. 기록 및 재생이 가능하다.
-
-* 리포지터리 - 리포지터리 패키지가 저장된 웹상의 URL 주소이다. git 등으로 다운로드 가능하다.
-
-* package.xml - 패키지 정보를 담은 XML파일로, 이름, 저작자, 의존성 패키지 등을 기술하고 있다.
-
-![](http://barraq.github.io/fOSSa2012/media/topic_protocol.png)
 
 ## 3. ROS 파일 시스템
+
+![](https://i.imgur.com/FtI3an4.png)
 
 * 설치 폴더 : `/opt/ros`, 그 안에 roscore등 핵심 유틸리티 등이 설치된다.
 
@@ -132,6 +141,8 @@
   * /share ROS 패키지
   * env.\* 환경설정파일
   * setup.\* 환경설정파일
+  
+![](https://i.imgur.com/A3W5HvG.png)
 
 * 사용자 작업 폴더: `catkin workspace`
 

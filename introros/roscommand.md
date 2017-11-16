@@ -1,6 +1,7 @@
 ## 4. 명령어
 
 > [http://wiki.ros.org/ROS/CommandLineTools](http://wiki.ros.org/ROS/CommandLineTools), [CheatSheet\(pdf\)](http://services.informatik.hs-mannheim.de/~ihme/robotik_2014ws/01_ROScheatsheet.pdf)
+> 오로카 : [ROS 명령어](http://cafe.naver.com/openrt/2827), [ROS 쉘 명령어](http://cafe.naver.com/openrt/2828), [ ROS 실행 명령어](http://cafe.naver.com/openrt/2830)
 
 ### 4.1 ROS BASH
 
