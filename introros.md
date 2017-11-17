@@ -167,6 +167,7 @@
 
 - Cameras : 물체인식, 얼굴인식, 문자판독 등에 많이 사용되는 카메라의 드라이버, 각종 응용 노드들을 모아두었다.
 
+> [Sensors supported by ROS](http://wiki.ros.org/Sensors)
 
 
 
