@@ -54,4 +54,9 @@ position_covariance_type: 0
 
 1. CMD툴로 ROSbag play 
 2. rviz 실행 
+  - Switch the **Fixed Frame** to `velodyne` so that we can show point clouds
+  - Add the **ROS nodes** that you want to visualize.
+  - Select the **By Topic** tab and choose the topic that you want to visualize
+  
+> 간혹 용량을 줄이기 위해 `/velodyne_packets`만 있고, `/velodyne_points`가 안 보일경우 [컨버팅 툴](https://github.com/udacity/didi-competition/blob/master/docs/GettingStarted.md#convert-velodyne_packets-to-velodyne_points) 사용 
 
