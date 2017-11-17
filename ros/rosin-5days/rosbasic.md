@@ -1,9 +1,9 @@
-# ROS Basic Concepts.
+# 패키지 생성 하기 
+
+
 
 > [Youtube](https://www.youtube.com/watch?v=-GZP81bTuO8), [강의자료](http://www.theconstructsim.com/ros-for-beginners/)
 
-
-## 1. 패키지 생성 하기 
 
 -  패키지 개발 환경 구축 `catkin_create_pkt <새 패키지 이름> <패키지 Dependencies>`
     - `rospack list`로 확인 가능 
