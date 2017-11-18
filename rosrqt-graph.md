@@ -1,6 +1,6 @@
 # RQT
 
-> 참고 : [오로카](http://cafe.naver.com/openrt/2963)
+> 참고 : [오로카](http://cafe.naver.com/openrt/2963), [위키](http://wiki.ros.org/rqt)
 
 ## 1. 개요 
 
