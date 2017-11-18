@@ -4,6 +4,7 @@
 
 * [Cover](README.md)
 * [ROS\_QtCreator](rosqtcreator.md)
+* [Caffe for ROS](caffe-for-ros.md)
 
 ## ROS
 
