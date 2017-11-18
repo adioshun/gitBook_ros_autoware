@@ -10,6 +10,7 @@
 
 ## 2. Paper
 
+- [An Open Approach to Autonomous Vehicles](http://ieeexplore.ieee.org/document/7368032/)
 
 
 ## 3. Article (Post, blog, etc.)
@@ -29,6 +30,12 @@
 - [ROS-based OSS for Urban Self-driving Mobility](https://roscon.ros.org/2017/presentations/ROSCon%202017%20Autoware.pdf):ppt
 
 ## 7. Implementation (Project)
+
+- [darknet_ros](https://github.com/yukkysaito/darknet_ros)
+
+- [YOLO_ROS](https://github.com/yukkysaito/yolo_ros)
+
+- [ssd_caffe_for_Autoware](https://github.com/yukkysaito/ssd_caffe_for_Autoware)
 
 
 ## 8. Research Group / Conference 
