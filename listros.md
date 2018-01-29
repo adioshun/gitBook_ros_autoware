@@ -36,6 +36,9 @@
 
 - [ROS Tutorial (Robot Operating System)](https://www.youtube.com/playlist?list=PLDC89965A56E6A8D6): 13개 강좌 
 
+- [온라인 강의 목차](https://www.youtube.com/playlist?list=PLRG6WP3c31_VIFtFAxSke2NG_DumVZPgw): 14강, 2018.01.08
+
+- [강의 자료: 온라인 강의에서 사용된 PDF파일 600페이지 분량 공유](https://github.com/robotpilot/ros-seminar)
 ## 6. Material (Pdf, ppt)
 
 - ['ROS 로봇 프로그래밍](https://github.com/robotpilot/ros-seminar): [추천] 로봇틱스, 표윤석 박사, ppt 13강의 
