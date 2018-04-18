@@ -25,6 +25,7 @@
 * [ROS\_rqt](rosrqt-graph.md)
 * [ROS\_ROSbag](rosrosbag.md)
 * [ROS\_RViz](rosrviz.md)
+* [ROS\_pcl](rospcl.md)
 * [ROS\_Package\_wviz](rospackage-wviz.md)
 
 ## AutoWare
