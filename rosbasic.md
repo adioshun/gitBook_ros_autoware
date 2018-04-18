@@ -118,8 +118,25 @@ print "hello world"
 
 ```
 
+1. Download
 
+```
+git clone https://github.com/udacity/self-driving-car
+cp -r ./self-driving-car/datasets/udacity_launch/ ~/catkin_ws/src/
+```
 
+2. Register {launch} with ROS via catkin_make.
+
+```
+cd ~/catkin_ws
+catkin_make
+source ./devel/setup.sh
+```
+
+3. Check 
+
+```
+??
 
 
 
