@@ -108,7 +108,7 @@ print "hello world"
 
 
 ```bash 
-# 작업 폴더 catkin_ws만들기 
+### 작업 폴더 catkin_ws만들기
 1. mkdir -p ~/catkin_ws/src
 2. cd ~/catkin_ws/src
 3. catkin_init_workspace # 
@@ -118,24 +118,15 @@ print "hello world"
 
 ```
 
-1. Download
-
 ```
+## 3rd package Install
+cd ~/catkin_ws/src
 git clone https://github.com/udacity/self-driving-car
-cp -r ./self-driving-car/datasets/udacity_launch/ ~/catkin_ws/src/
-```
 
-2. Register {launch} with ROS via catkin_make.
-
-```
 cd ~/catkin_ws
 catkin_make
 source ./devel/setup.sh
-```
 
-3. Check 
-
-```
 rospack profile
 rospack list | grep {velodyne}
 rospack find {}
