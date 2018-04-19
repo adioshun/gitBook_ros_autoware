@@ -136,7 +136,11 @@ source ./devel/setup.sh
 3. Check 
 
 ```
-??
+rospack profile
+rospack list | grep {velodyne}
+rospack find {}
+
+```
 
 
 
