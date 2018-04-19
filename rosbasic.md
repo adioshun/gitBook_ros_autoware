@@ -123,6 +123,9 @@ print "hello world"
 cd ~/catkin_ws/src
 git clone https://github.com/udacity/self-driving-car
 
+cd ~/catkin_ws/src/{package}/
+rosdep install --from-paths ./ --ignore-src --rosdistro indigo -y  ##depent package install
+
 cd ~/catkin_ws
 catkin_make
 source ./devel/setup.sh
