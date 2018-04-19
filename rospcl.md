@@ -22,6 +22,14 @@ PCD를 이미지로 변경 : `rosrun pcl_ros convert_pcd_to_image <cloud.pcd>`
 
 > [에러] "no rgb field"로 실행 안됨 - 추후 해결필요 
 
+###### [PCD시각화 방법] 
+
+ `pcl-tools` 패키지 설치 
+
+- $ `rosrun perception_pcl pcd_viewer <filename>`
+- $ `pcd_viewer <filename>` 
+- $ `pcl_viewer -multiview 1 <pcd_filepath>`
+
 ## 1.3 convert_pointcloud_to_image
 
 
