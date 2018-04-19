@@ -15,17 +15,19 @@
 ## 2. CMD 툴
 
 
-- Save : `rosbag record -o chatter.bag /chatter`
+Save : `rosbag record -o chatter.bag /chatter`
+- 
+- `-a` : 모두 저장
+Play : `rosbag play /{path-to-file}/bagfile_name.bag`
+- 반복 `-l` or `--loop`
 
-- Play : `rosbag play /{path-to-file}/bagfile_name.bag`
-  - 반복 -l or --loop
+Dislplay : roscore -> `$ rostopic echo /vehicle/gps/fix`
 
-- Dislplay : roscore -> `$ rostopic echo /vehicle/gps/fix`
+
+
 ```
+# This should output something like this: header:
 
-This should output something like this: header:
-
-```
   seq: 7318
   stamp:
     secs: 1492883544

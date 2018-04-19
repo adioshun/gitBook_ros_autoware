@@ -20,6 +20,8 @@ PCD를 이미지로 변경 : `rosrun pcl_ros convert_pcd_to_image <cloud.pcd>`
 파일 형태로 이미지를 저장하진 않고 **Topic**으로 출력 (확인필요)
 - output (sensor_msgs/Image) : A stream of images generated from the PCD file.
 
+> [에러] "no rgb field"로 실행 안됨 - 추후 해결필요 
+
 ## 1.3 convert_pointcloud_to_image
 
 
