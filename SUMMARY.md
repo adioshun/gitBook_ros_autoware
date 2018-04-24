@@ -14,6 +14,7 @@
   * [ROS\_Topic](ros/rosin-5days/rostopic.md)
   * [ROS\_Service](ros/rosin-5days/rosservice.md)
   * [ROS\_Action](ros/rosin-5days/rosaction.md)
+  * [ROS\_PackageInstallation](ros/rosin-5days/rospackageinstallation.md)
 * [ROS\_SLAM\_NAVIGATION](rosslam-navigation.md)
 * [ROS\_Perception \(0%\)](rosperception.md)
 * [ROS\_AutoVehicle101 \(30%\)](rosautovehicle101.md)

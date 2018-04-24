@@ -62,6 +62,7 @@
 ## 2. `launch`파일 실행 
 
 - roslaunch {패키지명} {my.launch}
+- roslaunch {패키지명} {my.launch} --screen 
 
 
 ---
