@@ -5,7 +5,7 @@
 - `rospack find {}`
 - `rospack depends-on {}` : 지정된 패키지를 이용하는 패키지 
 - `rospack depends {}` : 지정한 패키지가 실행시 필요한 패키지 
-- `roslocate info {}` # apt-get install python-rosinstall 
+- `roslocate info {}` # apt-get install python-rosinstall
 
 패키지 설치 
 
