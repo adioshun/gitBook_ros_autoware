@@ -29,6 +29,8 @@
 
 - [ROS-based OSS for Urban Self-driving Mobility](https://roscon.ros.org/2017/presentations/ROSCon%202017%20Autoware.pdf):ppt
 
+- [CalibrationToolkit_Manual]https://github.com/CPFL/Autoware/blob/6aea989f336561b94e5c29becccbd47228cd17f3/ros/src/sensing/fusion/packages/calibration_camera_lidar/CalibrationToolkit_Manual.pdf)
+
 ## 7. Implementation (Project)
 
 - [darknet_ros](https://github.com/yukkysaito/darknet_ros)
