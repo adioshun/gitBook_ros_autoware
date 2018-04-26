@@ -27,7 +27,6 @@
 * [ROS\_ROSbag](rosrosbag.md)
 * [ROS\_RViz](rosrviz.md)
 * [ROS\_PCL](rospcl.md)
-* [ROS\_Velodyne\_PointGrey](rosptgrey-camera.md)
 * [ROS\_Package\_wviz](rospackage-wviz.md)
 
 ## AutoWare
