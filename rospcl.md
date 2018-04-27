@@ -68,5 +68,6 @@ indices, model = seg.segment()
 [ROS/pcl/Tutorials](http://wiki.ros.org/pcl/Tutorials)
 
 
+# PCD Viewer
 
-
+`/usr/bin/pcl_viewer/{  }.pcd`
