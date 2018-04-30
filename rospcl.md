@@ -68,6 +68,8 @@ indices, model = seg.segment()
 [ROS/pcl/Tutorials](http://wiki.ros.org/pcl/Tutorials)
 
 
+[샘플 PCD파일](https://raw.github.com/PointCloudLibrary/data/master/tutorials/table_scene_lms400.pcd)
+
 # PCD Viewer
 
 `/usr/bin/pcl_viewer/{  }.pcd`
