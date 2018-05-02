@@ -42,35 +42,7 @@ PCD를 이미지로 변경 : `rosrun pcl_ros convert_pcd_to_image <cloud.pcd>`
 
 ---
 
-## 2. 활용
 
-예제
-
-```python
-import pcl
-import numpy as np
-p = pcl.PointCloud(np.array([[1, 2, 3], [3, 4, 5]], dtype=np.float32))
-seg = p.make_segmenter()
-seg.set_model_type(pcl.SACMODEL_PLANE)
-seg.set_method_type(pcl.SAC_RANSAC)
-indices, model = seg.segment()
-```
-
-# 시각화 툴
-
-## PCD 시각화 \(Jupyter + Potree\)
-
-* [point cloud visualization with jupyter/pcl-python/and potree](https://www.youtube.com/watch?v=s2IvpYvB7Ew) : Youtube
-
-[PCD File Format](http://www.jeffdelmerico.com/wp-content/uploads/2014/03/pcl_tutorial.pdf): slide 12
-
-[ROS/pcl/Tutorials](http://wiki.ros.org/pcl/Tutorials)
-
-[샘플 PCD파일](https://raw.github.com/PointCloudLibrary/data/master/tutorials/table_scene_lms400.pcd)
-
-# PCD Viewer
-
-`/usr/bin/pcl_viewer/{  }.pcd`
 
 ---
 
