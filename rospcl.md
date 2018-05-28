@@ -42,8 +42,6 @@ PCD를 이미지로 변경 : `rosrun pcl_ros convert_pcd_to_image <cloud.pcd>`
 
 ---
 
-
-
 ---
 
 ## GitBook
