@@ -26,8 +26,10 @@ vi CMakeLists.txt
 
 ```
 add_message_files(FILES my.msg)  #생성할 메시지 정의
-add_executable(topic_publisher src/my_topic_publisher.py  #송신기 정의
-add_executable(topic_subscriver src/my_topic_subscriver.py #수신기 정의
+
+#add_executable(<생성될 실행 파일명>   <생성시 사용할 소스코드> )
+add_executable(topic_publisher src/my_topic_publisher.py)  #송신기 정의
+add_executable(topic_subscriver src/my_topic_subscriver.py) #수신기 정의
 ```
 
 ### 2.3 메시지 / 실행 파일 생성
