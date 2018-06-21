@@ -125,7 +125,7 @@ ooo
 
 
 
-#### 2.4 빌드 하기 
+### 2.4 빌드 하기 
 
 - `rospack profile` 선작업으로 로스 패키지의 프로파일을 갱신
 - `cd ~/catkin_ws && catkin_make` 실제 빌드 
