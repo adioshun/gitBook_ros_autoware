@@ -8,6 +8,7 @@
 
 -  패키지 개발 환경 구축 `catkin_create_pkg <새 패키지 이름> <패키지 Dependencies>`
     - cd ~/catkin_ws/src
+    - python사용을 위해서는 <패키지 Dependencies>에 **rospy**지정 필요 
     - `rospack list`로 확인 가능 
     - `<패키지 Dependencies>`는 생략 후 나중에 package.xml로 지정 가능 
 
