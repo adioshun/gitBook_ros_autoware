@@ -1,7 +1,7 @@
 # ROS Basic
 
 1. roslaunch
-2. 패키지 
+2. ros programing
 3. 명령어 
 ---
 
@@ -67,12 +67,13 @@
 
 ---
 
-## 2. 패키지 생성 하기 
+## 2. ros programing(패키지 생성 하기 )
 
 
 
 > [Youtube](https://www.youtube.com/watch?v=-GZP81bTuO8), [강의자료](http://www.theconstructsim.com/ros-for-beginners/)
 
+### 2.1 초기 작업 
 
 -  패키지 개발 환경 구축 `catkin_create_pkt <새 패키지 이름> <패키지 Dependencies>`
     - `rospack list`로 확인 가능 
@@ -86,6 +87,26 @@
     - CMakeLists.txt : 빌드 설정 파일 (eg.실행 파일 생성, 의존성 패키지 우선 빌드, 링크 생성 등을 설정)
     - packages.xml :  패키지 설정 파일 (eg. 패키지의 이름, 저작자, 라이선스, 의존성 패키지 등을 기술)
 
+
+### 2.2 빌드파일 설정(`CMakeLists.txt`) 
+
+vi CMakeLists.txt
+
+```
+add_message_files(FILES my.msg)  #생성할 메시지 정의
+add_executable(topic_publisher src/my_topic_publisher.py  #송신기 정의
+add_executable(topic_subscriver src/my_topic_subscriver.py #수신기 정의
+```
+
+### 2.3 메시지 / 실행 파일 생성
+
+vi {패키지명}/msg/my_msg.msg
+```
+time stamp
+int32 data
+```
+
+vi {패키지명}/src/my_topic_publisher.py
 ```python
 ## Hello_world_node.py
 #! /usr/bin/env python
@@ -93,17 +114,32 @@ import rospy
 
 rospy.init_node('ObiWan')
 print "hello world"
-
 ```
 
-- 빌드 하기 
-    - `rospack profile` 선작업으로 로스 패키지의 프로파일을 갱신
-    - `cd ~/catkin_ws && catkin_make` 실제 빌드 
+vi {패키지명}/src/my_topic_subscriber.py
+```
+
+ooo
+```
+
+
+
+
+#### 2.4 빌드 하기 
+
+- `rospack profile` 선작업으로 로스 패키지의 프로파일을 갱신
+- `cd ~/catkin_ws && catkin_make` 실제 빌드 
+
+결과물 
+```
+~/catkin_ws/build : 설정 내용
+~/catkin_ws/devel/lib/{패키지명} : 실행파일
+~/catkin_ws/devel/include/{패키지명} : 메시지 헤더 파일
+```
     
-    
-- 노드 실행 : 
-   - `rosrun my_first_ros_pkg hello_world_node `
-   - `roslaunch <package_name> <*.launch file>`   
+### 2.5 노드 실행 : 
+ - `rosrun {패키지명} my_topic_publisher `
+ - `roslaunch <package_name> <*.launch file>`   
 
 
     
