@@ -21,7 +21,7 @@
 - src 폴더 : 소스 코드 (eg. Hello_world_node.py)
 - CMakeLists.txt : 빌드 설정 파일 (eg.실행 파일 생성, 의존성 패키지 우선 빌드, 링크 생성 등을 설정)
 - packages.xml :  패키지 설정 파일 (eg. 패키지의 이름, 저작자, 라이선스, 의존성 패키지 등을 기술)
-  - numpy사용시 추가 : `<build_depend>python-numpy</build_depend>` <run_depend>python-numpy</run_depend>
+  - numpy사용시 추가 : `<build_depend>python-numpy</build_depend>` `<run_depend>python-numpy</run_depend>`
 
 ### 2.2 빌드파일 설정(`CMakeLists.txt`) 
 
