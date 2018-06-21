@@ -1,6 +1,6 @@
 ## 2. ros programing(패키지 생성 하기 )
 
-
+- [참고 코드 :roscd rospy_tutorials](http://wiki.ros.org/rospy_tutorials)
 
 > [Youtube](https://www.youtube.com/watch?v=-GZP81bTuO8), [강의자료](http://www.theconstructsim.com/ros-for-beginners/)
 
