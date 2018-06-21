@@ -87,30 +87,6 @@ topic 이름
 주소 
 ```
 
-> TutleSim을 이용하여 설명 
-
-###### Core 실행 
-- The roscore is the main process that manages all the ROS system
-- You always need to have a roscore running in order to work with ROS : `roscore`
-
-
-###### turtlesim 패키지의 turtlesim_node 실행
-
-- `rosrun turtlesim turtlesim_node`
-
-###### turtlesim 패키지의 turtle_teleop_key 실행
-
-- `rosrun turtlesim turtle_teleop_key`
-
-###### Topic이용 하여 조작 하기 
-
-- 키보드 조작 하여 움직이기 
-
-- `/turtle1/cmd_vel `
-
-> rqt_graph 패키지의 rqt_graph 실행 `rosrun rqt_graph rqt_graph` 
-
-
 
 
 
