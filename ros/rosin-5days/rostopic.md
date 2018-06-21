@@ -87,7 +87,56 @@ topic 이름
 주소 
 ```
 
+---
+
+```python
+#!/usr/bin/env python
+
+import numpy as np
+
+# Callback function for your Point Cloud Subscriber
+def pcl_callback(pcl_msg):
+
+  # Convert ROS msg to PCL data
+  cloud = ros_to_pcl(pcl_msg) 
+
+  # Create a cloud with each cluster of points having the same color
+  clusters_cloud = pcl.PointCloud_PointXYZRGB()
+  clusters_cloud.from_list(colored_points)
+
+  # Publish the list of detected objects
+  rospy.loginfo('Detected {} objects: {}'.format(len(detected_objects_labels), detected_objects_labels))
+  detected_objects_publisher.publish(detected_objects)
 
 
+
+
+
+if __name__ == '__main__':
+
+  # Initialize ros node
+  rospy.init_node('object_markers_pub', anonymous = True)
+
+  # Create Subscribers
+  subscriber = rospy.Subscriber("/sensor_stick/point_cloud", pc2.PointCloud2, pcl_callback, queue_size = 1)
+
+  # Create Publishers
+  object_markers_publisher = rospy.Publisher("/object_markers", Marker, queue_size = 1)
+  detected_objects_publisher = rospy.Publisher("/detected_objects", DetectedObjectsArray, queue_size = 1)
+
+  # Load Model From disk
+  model = pickle.load(open('model.sav', 'rb'))
+  classifier = model['classifier']
+  encoder = LabelEncoder()
+  encoder.classes_ = model['classes']
+  scaler = model['scaler']
+
+  # Initialize color_list
+  get_color_list.color_list = []
+
+  # Spin 
+  while not rospy.is_shutdown():
+rospy.spin()
+```
 
 
