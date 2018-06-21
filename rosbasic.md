@@ -5,13 +5,13 @@
 3. 명령어 
 ---
 
-# ROS roslaunch 
+## 1. ROS roslaunch 
 
 - 하나의 노드 실행은 `rosrun`, 여러개의 노드 실행은 `roslaunch`
 
 - `~/catkin_ws/src/{패키지명}/launch/my.launch`
 
-## 1. `launch`파일 작성 
+### 1.1 `launch`파일 작성 
 
 - The launch file contains the **nodes **to be started and their parameters written in **XML format**.
 
@@ -59,15 +59,15 @@
   ```
 
 
-## 2. `launch`파일 실행 
+### 1.2 `launch`파일 실행 
 
 - roslaunch {패키지명} {my.launch}
-- roslaunch {패키지명} {my.launch} --screen 
+- `roslaunch {패키지명} {my.launch} --screen `
 
 
 ---
 
-# 패키지 생성 하기 
+## 2. 패키지 생성 하기 
 
 
 
@@ -76,6 +76,7 @@
 
 -  패키지 개발 환경 구축 `catkin_create_pkt <새 패키지 이름> <패키지 Dependencies>`
     - `rospack list`로 확인 가능 
+    - <패키지 Dependencies>는 생략 후 나중에 package.xml로 지정 가능 
 
 
 - 파일들 생성 확인 `~/catkin_ws/src/{패키지명}` 
