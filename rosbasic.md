@@ -76,11 +76,11 @@
 
 -  패키지 개발 환경 구축 `catkin_create_pkt <새 패키지 이름> <패키지 Dependencies>`
     - `rospack list`로 확인 가능 
-    - <패키지 Dependencies>는 생략 후 나중에 package.xml로 지정 가능 
+    - `<패키지 Dependencies>`는 생략 후 나중에 package.xml로 지정 가능 
 
 
 - 파일들 생성 확인 `~/catkin_ws/src/{패키지명}` 
-    - include 폴더
+    - include 폴더 : 헤더 파일
     - launch 폴더 : *.launch파일들 보관 
     - src 폴더 : 소스 코드 (eg. Hello_world_node.py)
     - CMakeLists.txt : 실행 파일 생성, 의존성 패키지 우선 빌드, 링크 생성 등을 설정
