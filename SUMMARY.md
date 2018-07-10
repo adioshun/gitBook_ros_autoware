@@ -28,6 +28,7 @@
 * [ROS\_RViz](rosrviz.md)
 * [ROS\_PCL](rospcl.md)
 * [ROS\_Package\_wviz](rospackage-wviz.md)
+* [ROS\_Rviz\_python](rosrviz-python.md)
 
 ## AutoWare
 
