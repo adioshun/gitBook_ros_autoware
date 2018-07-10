@@ -1,23 +1,27 @@
 ## 2. ros programing(패키지 생성 하기 )
 
-
+- [참고 코드 :roscd rospy_tutorials](http://wiki.ros.org/rospy_tutorials)
 
 > [Youtube](https://www.youtube.com/watch?v=-GZP81bTuO8), [강의자료](http://www.theconstructsim.com/ros-for-beginners/)
 
 ### 2.1 초기 작업 
 
--  패키지 개발 환경 구축 `catkin_create_pkt <새 패키지 이름> <패키지 Dependencies>`
-    - `rospack list`로 확인 가능 
-    - `<패키지 Dependencies>`는 생략 후 나중에 package.xml로 지정 가능 
+패키지 개발 환경 구축 
+- cd ~/catkin_ws/src
+- `catkin_create_pkg <새 패키지 이름> <패키지 Dependencies>`
+  - python사용을 위해서는 <패키지 Dependencies>에 **rospy**지정 필요 
+  - `<패키지 Dependencies>`는 생략 후 나중에 package.xml로 지정 가능 
+- `rospack list`로 확인 가능 
 
 
-- 파일들 생성 확인 `~/catkin_ws/src/{패키지명}` 
-    - include 폴더 : 헤더 파일
-    - launch 폴더 : *.launch파일들 보관 
-    - src 폴더 : 소스 코드 (eg. Hello_world_node.py)
-    - CMakeLists.txt : 빌드 설정 파일 (eg.실행 파일 생성, 의존성 패키지 우선 빌드, 링크 생성 등을 설정)
-    - packages.xml :  패키지 설정 파일 (eg. 패키지의 이름, 저작자, 라이선스, 의존성 패키지 등을 기술)
 
+파일들 생성 확인 `~/catkin_ws/src/{패키지명}` 
+- include 폴더 : 헤더 파일
+- launch 폴더 : *.launch파일들 보관 
+- src 폴더 : 소스 코드 (eg. Hello_world_node.py)
+- CMakeLists.txt : 빌드 설정 파일 (eg.실행 파일 생성, 의존성 패키지 우선 빌드, 링크 생성 등을 설정)
+- packages.xml :  패키지 설정 파일 (eg. 패키지의 이름, 저작자, 라이선스, 의존성 패키지 등을 기술)
+  - numpy사용시 추가 : `<build_depend>python-numpy</build_depend>` `<run_depend>python-numpy</run_depend>`
 
 ### 2.2 빌드파일 설정(`CMakeLists.txt`) 
 
@@ -25,8 +29,10 @@ vi CMakeLists.txt
 
 ```
 add_message_files(FILES my.msg)  #생성할 메시지 정의
-add_executable(topic_publisher src/my_topic_publisher.py  #송신기 정의
-add_executable(topic_subscriver src/my_topic_subscriver.py #수신기 정의
+
+#add_executable(<생성될 실행 파일명>   <생성시 사용할 소스코드> )
+add_executable(topic_publisher src/my_topic_publisher.py)  #송신기 정의
+add_executable(topic_subscriver src/my_topic_subscriver.py) #수신기 정의
 ```
 
 ### 2.3 메시지 / 실행 파일 생성
