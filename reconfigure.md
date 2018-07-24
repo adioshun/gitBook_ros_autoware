@@ -107,3 +107,7 @@ add_dependencies(example_node ${PROJECT_NAME}_gencfg)
 
 ```python
 cd ~/catkin_ws/src/{dynamic_tutorials}
+mkdir src
+mkdir node
+vi ./src/server.py
+```
