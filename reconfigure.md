@@ -20,16 +20,16 @@
 - load : load configuration from file, `$ rosrun dynamic_reconfigure dynparam load /node dump.yaml`
 
 
-## 설정 파일 지정 
+## 1. 설정 파일 지정 
 
-### 1.패키지 및 설정 파일 생성 
+### 1.1 패키지 및 설정 파일 생성 
 ```python 
-catkin_create_pkg --rosdistro ROSDISTRO dynamic_tutorials rospy roscpp dynamic_reconfigure
+catkin_create_pkg --rosdistro {ROSDISTRO} {dynamic_tutorials} rospy roscpp dynamic_reconfigure
 mkdir cfg
 vi ./cfg/MY.cfg
 ```
 
-### 2. 설정 파일 작성
+### 1.2 설정 파일 작성
 
 ```python 
 #!/usr/bin/env python
@@ -81,7 +81,7 @@ The last line simply tells the generator to generate the necessary files and exi
 ```
 
 
-### 3. 설정 파일 사용 가능하게 permission 조정 CMake에 알림 
+### 1.3 설정 파일 사용 가능하게 permission 조정 CMake에 알림 
 
 ```python
 chmod a+x cfg/NY.cfg
@@ -101,3 +101,10 @@ generate_dynamic_reconfigure_options(
 add_dependencies(example_node ${PROJECT_NAME}_gencfg)
 
 ```
+
+## 2. 노드 생성 
+
+
+```python 
+cd catkin_ws/~/src/{dynamic_tutorials}
+
