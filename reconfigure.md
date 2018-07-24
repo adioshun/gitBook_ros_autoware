@@ -6,28 +6,18 @@
     - 
 
 
-## GUI 
+## GUI : `rqt_reconfigure`
 
-- rqt_reconfigure
+## CUI : `$ rosrun dynamic_reconfigure dynparam {COMMAND}`
 
-## CUI
-
-```python 
-$ rosrun dynamic_reconfigure dynparam {COMMAND}
-```
-- dynparam list : list configurable nodes, ` $ rosrun dynamic_reconfigure dynparam list`
-
-- dynparam get : get node configuration, `$ rosrun dynamic_reconfigure dynparam get /node`
-
-- dynparam set : configure node 
+- list : list configurable nodes, ` $ rosrun dynamic_reconfigure dynparam list`
+- get : get node configuration, `$ rosrun dynamic_reconfigure dynparam get /node`
+- set : configure node 
     - Set the configurable parameter of a node to a value. , `$ rosrun dynamic_reconfigure dynparam set /node parameter_name value`
     - Set multiple configurable parameters of a node to a value.`$ rosrun dynamic_reconfigure dynparam set wge100_camera "{'camera_url':'foo', 'brightness':58}" `
-
-- dynparam set_from_parameters : copy configuration from parameter server, `$ rosrun dynamic_reconfigure dynparam set_from_parameters /node`
-
-- dynparam dump : dump configuration to file, `$ rosrun dynamic_reconfigure dynparam dump /node dump.yaml`
-
-- dynparam load : load configuration from file, `$ rosrun dynamic_reconfigure dynparam load /node dump.yaml`
+- set_from_parameters : copy configuration from parameter server, `$ rosrun dynamic_reconfigure dynparam set_from_parameters /node`
+- dump : dump configuration to file, `$ rosrun dynamic_reconfigure dynparam dump /node dump.yaml`
+- load : load configuration from file, `$ rosrun dynamic_reconfigure dynparam load /node dump.yaml`
 
 
 ## 설정 파일 지정 
