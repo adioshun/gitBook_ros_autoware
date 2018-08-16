@@ -28,6 +28,7 @@
 * [ROS\_PCL](rospcl.md)
 * [ROS\_Package\_wviz](rospackage-wviz.md)
 * [ROS\_Rviz\_Tool](rosrviz-python.md)
+* [cv\_bridge](cvbridge.md)
 * [reconfigure](reconfigure.md)
 * [ROS\_QtCreator](rosqtcreator.md)
 
