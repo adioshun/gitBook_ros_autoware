@@ -1,3 +1,24 @@
+http://wiki.ros.org/cv_bridge/Tutorials/ConvertingBetweenROSImagesAndOpenCVImagesPython
+
+
+```python 
+cv_image = bridge.imgmsg_to_cv2(image_message, desired_encoding="passthrough")
+image_message = cv2_to_imgmsg(cv_image, encoding="passthrough")
+
+    """
+    passthrough : 입력값 사용 
+    mono8: CV_8UC1, grayscale image    
+    mono16: CV_16UC1, 16-bit grayscale image    
+    bgr8: CV_8UC3, color image with blue-green-red color order    
+    rgb8: CV_8UC3, color image with red-green-blue color order    
+    bgra8: CV_8UC4, BGR color image with an alpha channel    
+    rgba8: CV_8UC4, RGB color image with an alpha channel
+    """
+```
+
+
+# Subscriber
+
 ```python 
 
 #! /usr/bin/python
