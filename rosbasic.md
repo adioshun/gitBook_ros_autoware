@@ -188,9 +188,9 @@ catkin_create_pkg my_pcl_tutorial pcl pcl_ros roscpp sensor_msgs
 // src/example.cpp
 
 #include <ros/ros.h>
-#include <sensor_msgs/PointCloud2.h>
 // PCL specific includes
-#include <pcl/ros/conversions.h>
+#include <sensor_msgs/PointCloud2.h>
+#include <pcl_conversions/pcl_conversions.h>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 
@@ -199,10 +199,13 @@ ros::Publisher pub;
 void 
 cloud_cb (const sensor_msgs::PointCloud2ConstPtr& input)
 {
-  // ... do data processing
-
+  // Create a container for the data.
   sensor_msgs::PointCloud2 output;
-  // Publish the data
+
+  // Do data processing here...
+  output = *input;
+  std::cout << "test" << std::endl;
+  // Publish the data.
   pub.publish (output);
 }
 
@@ -214,10 +217,10 @@ main (int argc, char** argv)
   ros::NodeHandle nh;
 
   // Create a ROS subscriber for the input point cloud
-  ros::Subscriber sub = nh.subscribe ("input", 1, cloud_cb);
+  ros::Subscriber sub = nh.subscribe ("/velodyne_points", 1, cloud_cb);
 
   // Create a ROS publisher for the output point cloud
-  pub = nh.advertise<sensor_msgs::PointCloud2> ("output", 1);
+  pub = nh.advertise<sensor_msgs::PointCloud2> ("output_test", 1);
 
   // Spin
   ros::spin ();
@@ -233,6 +236,8 @@ target_link_libraries(example ${catkin_LIBRARIES})
 
 cd ~/catkin_src
 catkin_make
+
+run : rosrun test example
 
 
 
