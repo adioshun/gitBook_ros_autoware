@@ -1,6 +1,8 @@
 # [rqt_multiplot](http://wiki.ros.org/rqt_multiplot)
 
+sudo apt-get install ros-kinetic-rqt-multiplot
 
+> 설치가 좀 복잡하니 melodic 사용자는 kinetic버젼 docker사용 추천 
 
 
 
