@@ -4,7 +4,7 @@ sudo apt-get install ros-kinetic-rqt-multiplot
 
 > 설치가 좀 복잡하니 melodic 사용자는 kinetic버젼 docker사용 추천 
 
-
+https://youtu.be/0xRofmn5iYw?t=456
 
 
 --- 
