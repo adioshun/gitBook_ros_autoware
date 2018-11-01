@@ -24,6 +24,7 @@
 * [Gazebo](rosgazebo.md)
 * [RQT](rosrqt-graph.md)
 * [ROSbag](rosrosbag.md)
+* [PlotJuggler](plotjuggler.md)
 * [RViz](rosrviz.md)
 * [ROS\_PCL](rospcl.md)
 * [ROS\_Package\_wviz](rospackage-wviz.md)
