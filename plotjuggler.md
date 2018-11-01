@@ -21,3 +21,9 @@ while not rospy.is_shoutdown():
 ```
 
 
+설치 : `sudo apt-get install ros-kinetic-plotjuggler`
+
+실행 
+1. rosrun plotjuggler PlotJuggler
+2. Go to streaming and start ros_topic_streaming
+3. simply select your topics you wanna stream
