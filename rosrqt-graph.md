@@ -58,7 +58,7 @@
 
 rqt_plot 은 2차원 데이터 플롯 툴이다. 플롯이라하면 좌료를 그리다라는 의미이다. 즉, ROS 메시지를 받아서 이를 좌표에 뿌리게 되는 것을 의미한다. 
 
-
+> [plotjuggler](http://wiki.ros.org/plotjuggler) 추천 
 
 ## RQT ServiceCaller
 
