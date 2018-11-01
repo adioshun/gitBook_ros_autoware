@@ -23,6 +23,19 @@ while not rospy.is_shoutdown():
 
 설치 : `sudo apt-get install ros-kinetic-plotjuggler`
 
+```bash
+# melodic 버
+sudo apt-get install qtbase5-dev libqt5svg5-dev ros-melodic-ros-type-introspection 
+
+cd ~/catkin_ws/src
+
+git clone https://github.com/facontidavide/PlotJuggler.git
+
+cd ..
+catkin_make
+source devel/setup.bash
+```
+
 실행 
 1. rosrun plotjuggler PlotJuggler
 2. Go to streaming and start ros_topic_streaming
