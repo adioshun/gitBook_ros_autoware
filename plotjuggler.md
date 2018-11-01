@@ -1,5 +1,7 @@
 # [plotjuggler](http://wiki.ros.org/plotjuggler)
 
+> 참고 : [rqt_multiplot](http://wiki.ros.org/rqt_multiplot)
+
 ![](https://facontidavide.github.io/PlotJuggler/images/PlotJuggler_terms.png)
 
 최근 버젼에서 ROS Topic 지원 
@@ -34,6 +36,8 @@ git clone https://github.com/facontidavide/PlotJuggler.git
 cd ..
 catkin_make
 source devel/setup.bash
+
+# $rosrun plotjuggler PlotJuggler 
 ```
 
 실행 
