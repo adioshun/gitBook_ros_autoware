@@ -4,6 +4,7 @@
 
 * [Cover](README.md)
 * [ROS\_Command](roscommand.md)
+* [rqt\_plot\_ext](rqtplot-ext.md)
 
 ## ROS
 
