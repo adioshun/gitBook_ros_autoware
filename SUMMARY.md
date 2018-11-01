@@ -4,7 +4,6 @@
 
 * [Cover](README.md)
 * [ROS\_Command](roscommand.md)
-* [rqt\_plot\_ext](rqtplot-ext.md)
 
 ## ROS
 
@@ -24,6 +23,7 @@
 
 * [Gazebo](rosgazebo.md)
 * [RQT](rosrqt-graph.md)
+  * [rqt\_plot](rosrqt-graph/rqtplot.md)
 * [ROSbag](rosrosbag.md)
 * [PlotJuggler](plotjuggler.md)
 * [RViz](rosrviz.md)
