@@ -31,6 +31,7 @@
 * [ROS\_Rviz\_Tool](rosrviz-python.md)
 * [cv\_bridge](cvbridge.md)
 * [reconfigure](reconfigure.md)
+  * [Dynamic dynamic reconfigure python](reconfigure/dynamic-dynamic-reconfigure-python.md)
 * [ROS\_QtCreator](rosqtcreator.md)
 
 ## AutoWare
