@@ -28,7 +28,8 @@ self.ddr.add_variable("enumerate", "enumerate variable", 1, 0, 3, edit_method=en
 ## 3. Main 함수 
 
 ```python
-
+import sys
+sys.path.append("/workspace/include")
 from ddynamic_reconfigure import DDynamicReconfigure 
 from ddynamic_reconfigure import DyConfigure
 
