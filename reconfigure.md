@@ -8,7 +8,6 @@
 
 - [Youtube: How to work with ROS Dynamic Reconfigure](https://www.youtube.com/watch?v=YKZkZSVcsnI&t=0s&list=WL&index=26)
 
-- cfg파일 / CMakeList.txt 설정 없이 python에서 바로 사용 하는 법 : [Dynamic dynamic reconfigure python](https://github.com/pal-robotics/ddynamic_reconfigure_python)
 
 ## GUI :
 
