@@ -39,3 +39,11 @@ markers.publishCube(T, 'red', scale, 5.0) # pose, color, scale, lifetime
 #-------------------------------
 
 ```
+
+---
+## Visualising the real time trajectory path using markers
+
+https://answers.ros.org/question/279558/visualising-the-real-time-trajectory-path-using-markers/
+
+
+https://youtu.be/0BlFQ8F5vhc
