@@ -14,6 +14,8 @@ sudo apt-get install ros-kinetic-rqt-multiplot
 
 
 ```python 
+
+## float64_Array
 from std_msgs.msg import Float32MultiArray
 from std_msgs.msg import MultiArrayDimension
 
@@ -39,6 +41,20 @@ def rqt_plot(tracker_input):
 msg = rqt_plot(tracker_table)
 pub = rospy.Publisher('sent_matrix', Float32MultiArray, queue_size=1)
 pub.publish(msg)
+
+## float64
+
+from std_msgs.msg import Float64
+
+  
+pub = rospy.Publisher('cos', Float64)
+
+msg = Float64()
+msg.data = math.cos(4*time.time())
+pub.publish(msg)
+
+
+
 ```
 
 
