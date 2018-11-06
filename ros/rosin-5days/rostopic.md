@@ -2,7 +2,7 @@
 
 [\[ROSpy\_tutorial\] Writing a Simple Publisher and Subscriber](http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber)
 
-CMD창에서 topic Pub 하기 : `$rostopic pub /{토픽이름} std_msgs/String "data : 'hi'" -r 2
+CMD창에서 topic Pub 하기 : `$rostopic pub /{토픽이름} std_msgs/String "data : 'hi'" -r {초}
 
 ### 2a.1 Topic Publisher
 
