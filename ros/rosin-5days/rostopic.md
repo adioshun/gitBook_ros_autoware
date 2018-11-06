@@ -2,6 +2,8 @@
 
 [\[ROSpy\_tutorial\] Writing a Simple Publisher and Subscriber](http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber)
 
+CMD창에서 topic Pub 하기 : `$rostopic pub /{토픽이름} std_msgs/String "data : 'hi'" -r 2
+
 ### 2a.1 Topic Publisher
 
 * A topic is like a pipe. Nodes use topics to publish information for other nodes so they can communicate.
