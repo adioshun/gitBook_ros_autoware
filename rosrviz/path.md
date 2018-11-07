@@ -1,5 +1,8 @@
 https://prieuredesion.github.io/robotics/blog/2018/03/04/odom-to-path.html
 
+https://answers.ros.org/question/278616/how-to-create-a-publisher-about-trajectory-path-then-show-it-in-rviz/
+
+https://www.youtube.com/watch?v=fsV4VyP7N2o
 
 
 nav_msgs/Path
