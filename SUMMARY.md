@@ -27,6 +27,7 @@
 * [ROSbag](rosrosbag.md)
 * [PlotJuggler](plotjuggler.md)
 * [RViz](rosrviz.md)
+  * [path](rosrviz/path.md)
 * [ROS\_PCL](rospcl.md)
 * [ROS\_Rviz\_Tool](rosrviz-python.md)
 * [cv\_bridge](cvbridge.md)
