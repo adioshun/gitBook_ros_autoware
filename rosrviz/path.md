@@ -27,40 +27,71 @@ geometry_msgs/PoseStamped[] poses
             float64 y
             float64 z
             float64 w
-
-
-def publish_path(self, ps):
-    path = Path()
-    path.header.frame_id = self.camera_frame_id
-    path.header.stamp = ps.header.stamp
-    self.path_list.append(ps)
-    path.poses = self.path_list
-    self.path_pub.publish(path)
-    return
-        
-def alvarcb(self, markers):
-    rospy.logdebug("Detected markers!")
-    # can we find the correct marker?
-    for m in markers.markers:
-        if m.id == self.marker_id:
-            odom_meas = Odometry()
-            odom_meas.header.frame_id = self.frame_id
-            m.pose.header.frame_id = self.camera_frame_id
-            odom_meas.child_frame_id = self.base_frame_id
-            odom_meas.header.stamp = m.header.stamp
-            m.pose.header.stamp = m.header.stamp
-            # now we need to transform this pose measurement from the camera
-            # frame into the frame that we are reporting measure odometry in
-            pose_transformed = self.transform_pose(m.pose)
-            if pose_transformed is not None:
-                odom_meas.pose.pose = pose_transformed.pose
-                # Now let's add our offsets:
-                odom_meas = odom_conversions.odom_add_offset(odom_meas, self.odom_offset)
-                self.meas_pub.publish(odom_meas)
-                self.send_transforms(odom_meas)
-                self.publish_path(m.pose)
-    return
-
 # https://github.com/NU-MSR/overhead_mobile_tracker/blob/master/src/mobile_tracker.py
 
 ```
+
+## ROS Code
+
+```python 
+
+
+
+
+
+
+```from nav_msgs.msg import Path
+from geometry_msgs.msg import PoseStamped```python 
+
+from nav_msgs.msg import Path
+from geometry_msgs.msg import PoseStamped
+
+def tranjectory_path(input_path):
+
+        input_path = input_path[0]
+        
+        
+        print("X {}, Y, {}".format(input_path[0], input_path[1]))
+
+        pose = PoseStamped()
+
+        pose.header.frame_id = "velodyne"
+        pose.pose.position.x = input_path[0]#float(data.pose.pose.position.x)
+        pose.pose.position.y = input_path[1] #float(data.pose.pose.position.y)
+        pose.pose.position.z = 0.1 #float(data.pose.pose.position.z)
+        pose.pose.orientation.x = 0.1 #float(data.pose.pose.orientation.x)
+        pose.pose.orientation.y = 0.1 #float(data.pose.pose.orientation.y)
+        pose.pose.orientation.z = 0.1 #float(data.pose.pose.orientation.z)
+        pose.pose.orientation.w = 0.1 #float(data.pose.pose.orientation.w)
+        #print(pose.pose.position.z)
+
+
+        pose.header.seq = path.header.seq + 1
+        path.header.frame_id = "velodyne"
+        path.header.stamp = rospy.Time.now()
+        pose.header.stamp = path.header.stamp
+        path.poses.append(pose)
+
+        
+        #print(path)
+
+        pub_path.publish(path)
+
+        return path    
+
+def callback(data):
+        tranjectory_path(data)
+
+
+
+if __name__ == "__main__":
+
+	
+	rospy.init_node('height_people_detection', anonymous=True)
+
+	path = Path() 
+	pub_path = rospy.Publisher('/path', Path, queue_size=1)
+
+    	rospy.Subscriber('/velodyne_bgremoval', PointCloud2, callback) #velodyne_points 
+
+    	rospy.spin(
