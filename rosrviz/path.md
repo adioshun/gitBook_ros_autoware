@@ -1,4 +1,27 @@
-https://prieuredesion.github.io/robotics/blog/2018/03/04/odom-to-path.html
+def tranjectory_path(input_path):
+        input_path = input_path[0]   
+        print("X {}, Y, {}".format(input_path[0], input_path[1]))
+        
+        pose = PoseStamped()
+        pose.header.frame_id = "velodyne"
+        pose.pose.position.x = input_path[0]
+        pose.pose.position.y = input_path[1] 
+        pose.pose.position.z = 0.1 
+        #pose.pose.orientation.x = 0.1 
+        #pose.pose.orientation.y = 0.1 
+        #pose.pose.orientation.z = 0.1 
+        #pose.pose.orientation.w = 0.1 
+        #print(pose.pose.position.z)
+        pose.header.seq = path.header.seq + 1
+        path.header.frame_id = "velodyne"
+        path.header.stamp = rospy.Time.now()
+        pose.header.stamp = path.header.stamp
+        path.poses.append(pose)
+        
+        #print(path)
+        pub_path.publish(path)
+
+        return path https://prieuredesion.github.io/robotics/blog/2018/03/04/odom-to-path.html
 
 https://answers.ros.org/question/278616/how-to-create-a-publisher-about-trajectory-path-then-show-it-in-rviz/
 
