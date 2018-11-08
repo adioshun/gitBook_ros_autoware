@@ -38,6 +38,10 @@ from nav_msgs.msg import Path
 from geometry_msgs.msg import PoseStamped
 
 def tranjectory_path(input_path):
+
+        if input_path.shape[0] == 0:
+            return path
+            
         input_path = input_path[0]   
         print("X {}, Y, {}".format(input_path[0], input_path[1]))
         
