@@ -2,7 +2,7 @@
 
 ## README
 
-* [Cover](README.md)
+* [Contents](README.md)
 * [Udacity Robotics Nanodegree](udacity-robotics-nanodegree.md)
 * [Didi-Udacity Self Driving Car Challenge 2017](didi-udacity-self-driving-car-challenge-2017.md)
 
