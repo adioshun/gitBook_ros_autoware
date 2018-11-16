@@ -25,6 +25,13 @@ roslaunch velodyne_description example.launch
 
 ```
 
+---
+
+## Human 3D Model Tool
+
+http://www.makehumancommunity.org/
+
+설명 : [[ROS Q&A] How to create and spawn humans in Gazebo7](https://www.youtube.com/watch?v=7kEmT-NE75c&feature=youtu.be)
 
 ---
 
