@@ -24,6 +24,58 @@ cd ~/catkin_ws/ && catkin_make
 roslaunch velodyne_description example.launch 
 
 ```
+---
+
+## Tutorial 
+
+## 빌딩 생성 
+
+1. Edit - Building Editor
+2. 생성 
+3. 저장 
+
+
+## 바닥 생성 
+
+> 미 생성시 로봇등이 바닥으로 사라짐 
+
+1. world - models - Ground_plane 
+
+
+## 요소 추가 (가구등)
+
+1. Insert -> 찾아 넣기 
+2. 저장 : sim.world
+
+
+
+## 로봇 추가 
+
+- 로봇관련 URDF파일(*.xacro)들을 패키지 하단 urdf폴더에 복사 
+	- eg. 체 *.xacro ~/catkin_ws/src/robot/urdf
+
+
+- 센서 추가 : turtlebot_gazebo.urdf.xacro 파일에 센서 설정등 추가 
+
+- 런치 파일에 처음에 만든 world 정보 추가 : turtlebot_hokuyo.launch
+
+```xml
+...
+
+<arg name="world_file" value="sim.world">
+...
+```
+
+
+## 사람 추가 (Actor)
+
+wget https://bitbucket.org/osrf/gazebo/raw/348b3de008a00cc7b73ad95ad1b8ce00c9d22024/worlds/actor.world
+gazebo actor.world
+
+
+## 실행 
+
+$gazebo sim.world
 
 ---
 
