@@ -44,6 +44,35 @@
 ## `*.world`
 
 
+```xml
+<!-- model.config파일 -->
+
+<?xml version="1.0" ?>
+<sdf version ="1.4">
+  <world name="default">
+       <!-- A ground light source -->
+   <include>
+     <uri>model://sun</uri>
+   </include>
+
+       <!-- A ground plane -->
+   <include>
+     <uri>model://ground_plane</uri>
+   </include>
+
+       <!-- Add YOUR ROBOT -->
+   <include>
+     <uri>model://(package_name)</uri>
+     <posd>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+   </include>
+
+  </world>
+</sdf>
+
+
+```
+
+
 ##  `*.xacro` 
 
 
