@@ -57,13 +57,15 @@
 
 ## 2. Unified Robot Description Forma (`*.urdf`)
 
-> [URDF Examples](http://wiki.ros.org/urdf/Examples), [Gazebo Tutorial](http://gazebosim.org/tutorials/?tut=ros_urdf), 
+> [ROS Tutiroai](http://wiki.ros.org/urdf/Tutorials), [Gazebo Tutorial](http://gazebosim.org/tutorials/?tut=ros_urdf), [URDF Examples](http://wiki.ros.org/urdf/Examples)
 
 - 정의 : An XML format for representing a robot model
 
 - 구성 : The description of a robot consists of 
   - a set of link (part) elements, and 
   - a set of joint elements connecting the links together
+  
+- 시각화(rviz) :  roslaunch urdf_tutorial display.launch model:=multipleshapes.urdf
 
 [URDF Reference](http://enesbot.me/urdf-reference.html)
 
@@ -130,6 +132,7 @@
 - 정의 : Xacro 는 XML macro 언어로써, 반복되는 작업을 모듈화하여 재사용성이 용이하도록 도와준다.
   - you can construct shorter and more readable XML files by using macros that expand to larger XML expressions.
 
+- 변환 : rosrun xacro xacro.py model.xacro > model.urdf
 
 [Using Xacro to Clean Up a URDF File](http://wiki.ros.org/urdf/Tutorials/Using%20Xacro%20to%20Clean%20Up%20a%20URDF%20File)
 
@@ -191,7 +194,9 @@
 - model.sdf : 무게, 관성(inertia) 정보, collision geometry **WITH `*.dae` File **
 7. gazebo 툴 실행 - insert - 모델 찾아 넣기
 
-
+> The collision element is a direct subelement of the link object, at the same level as the visual tag
+> The collision element defines its shape the same way the visual element does, with a geometry tag
+> Inertia is the resistance of any physical object to any change in its state of motion, including changes to its speed and direction
 
 ```xml
 <!-- model.config파일 -->

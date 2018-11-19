@@ -68,12 +68,7 @@ roslaunch velodyne_description example.launch
 ```
 
 
-## 사람 추가 (Actor)
 
-wget https://bitbucket.org/osrf/gazebo/raw/348b3de008a00cc7b73ad95ad1b8ce00c9d22024/worlds/actor.world
-gazebo actor.world
-
-[Make an animated model (actor)](http://gazebosim.org/tutorials?tut=actor)
 
 ## 실행 
 
