@@ -2,6 +2,7 @@
 
 https://dnddnjs.gitbooks.io/drone-autonomous-flight/content/gazebo6_c124_ce58.html
 
+## 1. 용어 / 확장자 
 
 ## Velodyne simulation
 
@@ -72,6 +73,7 @@ roslaunch velodyne_description example.launch
 wget https://bitbucket.org/osrf/gazebo/raw/348b3de008a00cc7b73ad95ad1b8ce00c9d22024/worlds/actor.world
 gazebo actor.world
 
+[Make an animated model (actor)](http://gazebosim.org/tutorials?tut=actor)
 
 ## 실행 
 
@@ -101,6 +103,8 @@ http://www.makehumancommunity.org/
 9. [Coverage Map 생성하기](https://github.com/EtainClub/etainclub/wikiROS-Gazebo-강좌9) (완료)
 10. [Coverage Ratio 계산하기](https://github.com/EtainClub/etainclub/wikiROS-Gazebo-강좌10) (완료)
 
-## [Tutorial] Building a Simulated Model for Gazebo and ROS from Scratch (part 1): [Blog](http://moorerobots.com/blog/post/1), [Youtube](https://www.youtube.com/watch?v=8ckSl4MbZLg)
+- [Tutorial] Building a Simulated Model for Gazebo and ROS from Scratch (part 1): [Blog](http://moorerobots.com/blog/post/1), [Youtube](https://www.youtube.com/watch?v=8ckSl4MbZLg)
 
-## [Tutorial] Adding Sensors to the Gazebo Model (part 2): [Blog](http://moorerobots.com/blog/post/2), [Youtube](https://www.youtube.com/watch?v=EZ3MYf24c6Y)
+- [Tutorial] Adding Sensors to the Gazebo Model (part 2): [Blog](http://moorerobots.com/blog/post/2), [Youtube](https://www.youtube.com/watch?v=EZ3MYf24c6Y)
+
+- [도면 이미지 이용하여 가즈보 빌딩 모델 만들기](https://www.youtube.com/watch?v=7McYSJFAqlU): youtube
