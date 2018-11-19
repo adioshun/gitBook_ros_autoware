@@ -24,6 +24,7 @@
 ## ROS Tools
 
 * [Gazebo](rosgazebo.md)
+  * [sdf\_xacro\_world\_Fildes](rosgazebo/sdfxacro-world-fildes.md)
 * [RQT](rosrqt-graph.md)
   * [rqt\_plot](rosrqt-graph/rqtplot.md)
 * [ROSbag](rosrosbag.md)
