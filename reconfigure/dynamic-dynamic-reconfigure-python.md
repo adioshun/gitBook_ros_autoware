@@ -41,7 +41,7 @@ if __name__ == "__main__":
     mot_tracker = Sort()
     rospy.init_node('height_people_detection', anonymous=True)
 
-    E = DyConfigure()
+    E = DyConfigure() #init_node다음에 
     rospy.Subscriber('/velodyne_bg', PointCloud2, callback)
 
     rospy.spin()
