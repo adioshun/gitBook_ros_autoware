@@ -38,6 +38,7 @@
 * [reconfigure](reconfigure.md)
   * [Dynamic dynamic reconfigure python](reconfigure/dynamic-dynamic-reconfigure-python.md)
 * [ROS\_QtCreator](rosqtcreator.md)
+* [ROS\_Serial](rosserial.md)
 
 ## AutoWare
 
