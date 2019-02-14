@@ -3,3 +3,4 @@
 pip install pyserial
 sudo apt-get install ros-melodic-rosserial
 rosrun rosserial_python serial_node.py _port:=/dev/ttyACM1 _baud:=115200
+/opt/ros/melodic/lib/rosserial_python/serial_node.py
