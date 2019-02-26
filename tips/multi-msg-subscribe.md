@@ -1,5 +1,11 @@
 
-## [message_filters](http://docs.ros.org/melodic/api/message_filters/html/python/index.html)
+# [message_filters](http://docs.ros.org/melodic/api/message_filters/html/python/index.html)
+
+ref : [Study ROS message_filters](http://robonchu.hatenablog.com/entry/2017/06/11/121000)
+
+## Time Synchronizer
+
+> The TimeSynchronizer filter synchronizes incoming channels by the timestamps contained in their headers, and outputs them in the form of a single callback that takes the same number of channels. The C++ implementation can synchronize up to 9 channels.
 
 ```python 
 
@@ -32,3 +38,22 @@ if __name__ == "__main__":
 ```
     
     
+## ApproximateTime Policy
+
+> The message_filters::sync_policies::ApproximateTime policy uses an adaptive algorithm to match messages based on their timestamp.
+
+```python 
+
+import message_filters
+from std_msgs.msg import Int32, Float32
+
+def callback(mode, penalty):
+  # The callback processing the pairs of numbers that arrived at approximately the same time
+
+mode_sub = message_filters.Subscriber('mode', Int32)
+penalty_sub = message_filters.Subscriber('penalty', Float32)
+
+ts = message_filters.ApproximateTimeSynchronizer([mode_sub, penalty_sub], 10, 0.1, allow_headerless=True)
+ts.registerCallback(callback)
+rospy.spin()
+```
