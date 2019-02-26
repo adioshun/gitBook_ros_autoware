@@ -40,6 +40,11 @@
 * [ROS\_QtCreator](rosqtcreator.md)
 * [ROS\_Serial](rosserial.md)
 
+## Tips
+
+* [Multi msg subscribe](tips/multi-msg-subscribe.md)
+
+
 ## AutoWare
 
 * [Intro\_AutoWare](autoware/introautoware.md)
