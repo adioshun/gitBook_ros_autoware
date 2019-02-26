@@ -2,7 +2,8 @@
 
 ![](https://camo.githubusercontent.com/b054746bd80be86bdc706b6ae91cdf6ce8bf0737/68747470733a2f2f7261772e6769746875622e636f6d2f4461766964422d434d552f7276697a5f746f6f6c735f70792f6d61737465722f64656d6f5f6d61726b657273312e706e67)
 
-rviz marker 기능을 쉽게 사용
+- rviz marker 기능을 쉽게 사용
+- 설치 : [rviz_tools.py](https://raw.githubusercontent.com/DavidB-CMU/rviz_tools_py/master/src/rviz_tools_py/rviz_tools.py) 파일 import
 
 
 ```python 
