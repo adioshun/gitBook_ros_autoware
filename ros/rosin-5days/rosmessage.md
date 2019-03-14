@@ -176,9 +176,9 @@ if __name__ == '__main__':
   rospy.Subscriber("mytopic", numpy_nd_msg(Float32MultiArray), cb)
 
 
-  r=rospy.Rate(10);
+  r=rospy.Rate(1);
   while not rospy.is_shutdown():
-      a=numpy.random.randn(2,3)
+      a=numpy.array(numpy.random.randn(2,3), dtype=numpy.float32) #please ensure the dtype in identifical to the topic type
       print "sending\n", a
       pub.publish(data=a)
       r.sleep()
