@@ -13,48 +13,34 @@
 from std_msgs.msg import Float32MultiArray
 from std_msgs.msg import MultiArrayDimension
 
-def rqt_plot(tracker_input):
+#subscriber
+sub_radar = rospy.Subscriber("/radar_track", Float32MultiArray, self.radar_callback)
+
+def radar_callback(self, input_radar):     
+    #input_radar = [timestmap, Tid, rho,phi,drho]    
+    sensor_data = DataPoint({ 
+      'timestamp': int(input_radar.data[0]),
+      'name': 'radar',  
+      'rho': input_radar.data[2], 
+      'phi': input_radar.data[3],
+      'drho': input_radar.data[4]
+    }) 
+
+
+## publisher 
+pub_track = rospy.Publisher('/radar_track', Float32MultiArray, queue_size=1)
+
+def radar_pub():
     msg = Float32MultiArray()
-    """
-    msg.layout.dim.append(MultiArrayDimension())
-    msg.layout.dim.append(MultiArrayDimension())    
-    msg.layout.dim[0].label = "height"
-    msg.layout.dim[1].label = "width"
-    msg.layout.dim[0].size = 3
-    msg.layout.dim[1].size = 3    
-    msg.layout.dim[0].stride = 3*3
-    msg.layout.dim[1].stride = 3
-    msg.layout.data_offset = 0
-    """
-    msg.data = [0]*9       
-    msg.data[0] = tracker_input[0]  
-    msg.data[1] = tracker_input[1] 
-    return msg
-
-
-msg = rqt_plot(tracker_table)
-pub = rospy.Publisher('sent_matrix', Float32MultiArray, queue_size=1)
-pub.publish(msg)
-
-## float64
-
-from std_msgs.msg import Float64
-
-
-pub = rospy.Publisher('cos', Float64)
-
-msg = Float64()
-msg.data = math.cos(4*time.time())
-pub.publish(msg)
+    msg.data = []
+    msg.data = [timestmap, Tid, rho,phi,drho
+    
+    pub_track.publish(msg)
 
 ```
 ---
 
-## [Tools for converting ROS messages to and from numpy arrays. Contains two functions:](https://github.com/eric-wieser/ros_numpy)
-
----
-
-## numpy msg (정상 동작 확인 못함)
+## numpy_msg
 
 http://wiki.ros.org/rospy_tutorials/Tutorials/numpy
 
@@ -63,49 +49,35 @@ http://wiki.ros.org/rospy_tutorials/Tutorials/numpy
 from my_msgs.msg import Floats
 from rospy.numpy_msg import numpy_msg
 
-rospy.Subscriber("floats", numpy_msg(Floats), callback)
+#subscriber
+rospy.Subscriber("lidar_track", numpy_msg(Floats), callback)
 
-... and the publisher equivalent
-
-pub = rospy.Publisher('floats', numpy_msg(Floats))
-a = numpy.array([1.0, 2.1, 3.2, 4.3, 5.4, 6.5], dtype=numpy.float32)
-pub.publish(a)
-
-```
-
-
-
-```python
-
-from rospy.numpy_msg import numpy_msg
-
-self.js_sub = rospy.Subscriber("joint_state_check", numpy_msg(Float32MultiArray), self.js_cb)
-self.js_pub = rospy.Publisher("collision_check", Int16, queue_size = 10)
+def callback(data):
+    print rospy.get_name(), "I heard %s"%str(data.data)
+    data = data.data
+    dim = int(data.size)/int(3)
+    data = data.reshape(dim,3)
+    print(data)
 
 
+## publisher 
 
-#!/usr/bin/env python
-PKG = 'numpy_tutorial'
-import roslib; roslib.load_manifest(PKG)
+pub_track = rospy.Publisher('/lidar_track', numpy_msg(Floats), queue_size=1)
 
-import rospy
-from rospy.numpy_msg import numpy_msg
-from rospy_tutorials.msg import Floats
+msg = []
+for i in range:
+    msg.append([centroid[0], centroid[1], 0.0])        
 
-import numpy
-def talker():
-pub = rospy.Publisher('floats', numpy_msg(Floats))
-rospy.init_node('talker', anonymous=True)
-r = rospy.Rate(10) # 10hz
-while not rospy.is_shutdown():
-a = numpy.array([1.0, 2.1, 3.2, 4.3, 5.4, 6.5], dtype=numpy.float32)
-pub.publish(a)
-r.sleep()
+msg = np.asarray(msg ,dtype=np.float32)  
+pub_track.publish(msg.reshape(-1)) #1D로 변경 하여 전송 
 
-if __name__ == '__main__':
-talker()
 
 ```
+
+
+
+## [Tools for converting ROS messages to and from numpy arrays. Contains two functions:](https://github.com/eric-wieser/ros_numpy)
+
 
 
 ---
