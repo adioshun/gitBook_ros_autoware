@@ -48,9 +48,32 @@ msg.data = math.cos(4*time.time())
 pub.publish(msg)
 
 ```
+---
 
+## [Tools for converting ROS messages to and from numpy arrays. Contains two functions:](https://github.com/eric-wieser/ros_numpy)
+
+---
 
 ## numpy msg (정상 동작 확인 못함)
+
+http://wiki.ros.org/rospy_tutorials/Tutorials/numpy
+
+
+```python 
+from my_msgs.msg import Floats
+from rospy.numpy_msg import numpy_msg
+
+rospy.Subscriber("floats", numpy_msg(Floats), callback)
+
+... and the publisher equivalent
+
+pub = rospy.Publisher('floats', numpy_msg(Floats))
+a = numpy.array([1.0, 2.1, 3.2, 4.3, 5.4, 6.5], dtype=numpy.float32)
+pub.publish(a)
+
+```
+
+
 
 ```python
 
