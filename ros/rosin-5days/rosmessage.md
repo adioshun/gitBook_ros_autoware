@@ -1,51 +1,47 @@
 # multi array mesg
 
-
 @2010글 : The ROS msg IDL only supports 1D arrays. The reshape approach is the correct approach to ensure compatibility in multiple languages.
-
 
 ## [Float32MultiArray](https://gist.github.com/jarvisschultz/7a886ed2714fac9f5226#file-matrix_sender-py)
 
-
-```python 
-
+```python
 ## float64_Array
 from std_msgs.msg import Float32MultiArray
 from std_msgs.msg import MultiArrayDimension
 
 #subscriber
-sub_radar = rospy.Subscriber("/radar_track", Float32MultiArray, self.radar_callback)
+def radar_callback(input_radar):
+    print(input_radar.data)
 
-def radar_callback(self, input_radar):     
-    #input_radar = [timestmap, Tid, rho,phi,drho]    
-    sensor_data = DataPoint({ 
-      'timestamp': int(input_radar.data[0]),
-      'name': 'radar',  
-      'rho': input_radar.data[2], 
-      'phi': input_radar.data[3],
-      'drho': input_radar.data[4]
-    }) 
+if __name__ == '__main__':    
+    rospy.init_node('listener')
+    rospy.Subscriber("/radar_track", Float32MultiArray, radar_callback)
+    rospy.spin()
 
 
 ## publisher 
-pub_track = rospy.Publisher('/radar_track', Float32MultiArray, queue_size=1)
+def talker():
+    r = rospy.Rate(10) # 10hz
+    while not rospy.is_shutdown():
+        msg = Float32MultiArray()
+        msg.data = []
+        msg.data = [1,2,3,4]
+        pub.publish(msg)
+        r.sleep()
 
-def radar_pub():
-    msg = Float32MultiArray()
-    msg.data = []
-    msg.data = [timestmap, Tid, rho,phi,drho
-    
-    pub_track.publish(msg)
-
+if __name__ == '__main__':    
+    rospy.init_node('talker', anonymous=True)
+    pub = rospy.Publisher('/radar_track', Float32MultiArray, queue_size=1)
+    talker()
 ```
+
 ---
 
-## numpy_msg
+## numpy\_msg
 
-http://wiki.ros.org/rospy_tutorials/Tutorials/numpy
+[http://wiki.ros.org/rospy\_tutorials/Tutorials/numpy](http://wiki.ros.org/rospy_tutorials/Tutorials/numpy)
 
-
-```python 
+```python
 from my_msgs.msg import Floats
 from rospy.numpy_msg import numpy_msg
 
@@ -69,22 +65,16 @@ for i in range:
     msg.append([centroid[0], centroid[1], 0.0])        
 
 msg = np.asarray(msg ,dtype=np.float32)  
-pub_track.publish(msg.reshape(-1)) #1D로 변경 하여 전송 
-
-
+pub_track.publish(msg.reshape(-1)) #1D로 변경 하여 전송
 ```
-
-
 
 ## [Tools for converting ROS messages to and from numpy arrays. Contains two functions:](https://github.com/eric-wieser/ros_numpy)
 
-
-
 ---
 
-## numpy n-D msg 
+## numpy n-D msg
 
-```python 
+```python
 #!/usr/bin/env python
 #This is modified from rospy/src/rospy/numpy_msg.py
 
@@ -116,7 +106,7 @@ def _deserialize_numpy(self, str):
     dims=map(lambda x:x.size, self.layout.dim)
     self.data = self.data.reshape(dims)
     return self
-    
+
 ## Use this function to generate message instances using numpy array
 ## types for numerical arrays. 
 ## @msg_type Message class: call this functioning on the message type that you pass
@@ -154,6 +144,7 @@ if __name__ == '__main__':
       print "sending\n", a
       pub.publish(data=a)
       r.sleep()
-
 ```
+
+
 
