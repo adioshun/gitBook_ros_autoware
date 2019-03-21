@@ -33,6 +33,18 @@ if __name__ == '__main__':
     rospy.init_node('talker', anonymous=True)
     pub = rospy.Publisher('/radar_track', Float32MultiArray, queue_size=1)
     talker()
+    
+    
+    """
+    mat.layout.dim.append(MultiArrayDimension())
+    mat.layout.dim.append(MultiArrayDimension())
+    mat.layout.dim[0].label = "height"
+    mat.layout.dim[1].label = "width"
+    mat.layout.dim[0].size = 3
+    mat.layout.dim[1].size = 3
+    mat.layout.dim[0].stride = 3*3
+    mat.layout.dim[1].stride = 3
+"""
 ```
 
 ---
