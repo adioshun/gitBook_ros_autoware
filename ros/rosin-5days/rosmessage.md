@@ -54,10 +54,26 @@ def callback(data):
     dim = int(data.size)/int(3)
     data = data.reshape(dim,3)
     print(data)
+"""
+def callback(data):
+    print rospy.get_name(), "I heard %s"%str(data.data)
+    data = data.data
+    #dim = int(data.size)/int(3)
+    data = data.reshape(data.size/3,3)
+    print(data)
+
+def listener():
+    rospy.init_node('listener')
+    rospy.Subscriber("lidar_track", numpy_msg(Floats), callback)
+
+    rospy.spin()
+
+if __name__ == '__main__':
+    listener()
+    """
 
 
 ## publisher 
-
 pub_track = rospy.Publisher('/lidar_track', numpy_msg(Floats), queue_size=1)
 
 msg = []
@@ -66,6 +82,23 @@ for i in range:
 
 msg = np.asarray(msg ,dtype=np.float32)  
 pub_track.publish(msg.reshape(-1)) #1D로 변경 하여 전송
+
+
+"""
+def talker():
+    pub = rospy.Publisher('lidar_track', numpy_msg(Floats),queue_size=10)
+    rospy.init_node('talker', anonymous=True)
+    r = rospy.Rate(10) # 10hz
+    while not rospy.is_shutdown():
+        a = numpy.array([1.0, 2.1, 3.2, 4.3, 5.4, 6.5], dtype=numpy.float32)
+        print("a:",a.shape)
+        pub.publish(a)
+        r.sleep()
+
+if __name__ == '__main__':
+    talker()
+
+"""
 ```
 
 ## [Tools for converting ROS messages to and from numpy arrays. Contains two functions:](https://github.com/eric-wieser/ros_numpy)
