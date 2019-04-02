@@ -2,7 +2,7 @@
 
 > The main difference is the isolated environment that you get with catkin build.
 
-## 1. catkin_tools
+## 1. [catkin_tools](https://catkin-tools.readthedocs.io/en/latest/index.html)
 
 ### 1.1 설치 
 
@@ -11,7 +11,12 @@ sudo apt-get install python-catkin-tools
 sudo pip install -U catkin_tools
 ```
 
+### 1.2 명령어 
 
+catkin init  : 초기화 in `~/catkin_workspace/`
+catkin create pkg pkg_a    : 패키지 추가 in `~/catkin_workspace/src`
+catkin build   : 빌드 
+catkin list 
 
 ## 2. [catkin make](http://wiki.ros.org/ko/ROS/Tutorials/BuildingPackages)
 
