@@ -5,32 +5,24 @@
 * [Contents](README.md)
 * [References](references.md)
 
-## ROS_Intro
+## ROS\_Intro
 
-* [List\_ROS](listros.md)
 * [Intro\_ROS](introros.md)
 * [Udacity Robotics Nanodegree](udacity-robotics-nanodegree.md)
 * [Didi-Udacity Self Driving Car Challenge 2017](didi-udacity-self-driving-car-challenge-2017.md)
 
-
-
-
 ## ROS Basic
 
-* [ROS\_Command](roscommand.md)
 * [명령어](basic/command.md)
 * [catkin](basic/catkin.md)
 
-
-
-## ROS _Programing
+## ROS \_Programing
 
 * [ROS\_Programing](rosbasic.md)
   * [ROS\_Topic](ros/rosin-5days/rostopic.md)
   * [ROS\_Service](ros/rosin-5days/rosservice.md)
   * [ROS\_Action](ros/rosin-5days/rosaction.md)
   * [ROS\_message](ros/rosin-5days/rosmessage.md)
-
 
 ## ROS package
 
@@ -51,7 +43,7 @@
 * [ROS\_QtCreator](rosqtcreator.md)
 * [ROS\_Serial](rosserial.md)
 
-## ROS Application 
+## ROS Application
 
 * [ROS\_SLAM\_NAVIGATION](rosslam-navigation.md)
 * [ROS\_Perception \(0%\)](rosperception.md)
