@@ -15,8 +15,9 @@ sudo pip install -U catkin_tools
 
 catkin init  : 초기화 in `~/catkin_workspace/`
 catkin create pkg pkg_a    : 패키지 추가 in `~/catkin_workspace/src`
-catkin build   : 빌드 
-catkin list 
+catkin build   : 빌드 `~/catkin_ws/devel/lib/`
+catkin list :
+
 
 ## 2. [catkin make](http://wiki.ros.org/ko/ROS/Tutorials/BuildingPackages)
 
