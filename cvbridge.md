@@ -69,7 +69,7 @@ if __name__ == '__main__':
 ```
 
 ---
-```
+```python
 #!/usr/bin/python
 # coding: utf-8
 
