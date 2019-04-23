@@ -16,8 +16,10 @@
 - 반복 `-l` or `--loop`
 
 자르기 
-- rosbag filter input.bag output.bag "t.secs >= 1531425960 and t.secs <= 1531426140"
+- `rosbag filter input.bag output.bag "t.secs >= 1531425960 and t.secs <= 1531426140"`
 
+pcd로 저장 
+- `rosrun pcl_ros bag_to_pcd <input_file.bag> /<topic> <output_directory>`  # pcl_ros 설치 필요 
 
 
 ## 3. 포맷 
