@@ -1,6 +1,4 @@
-# ROS PCL
-
-설치\(ubuntu 14\) : [PCL for ROS](https://github.com/adioshun/System_Setup/wiki/7_PCL#3-pcl-for-ros), [\[홈페이지\]](http://wiki.ros.org/pcl_ros)
+# [ROS PCL](http://wiki.ros.org/pcl_ros)
 
 ## 1. Tools
 
@@ -10,7 +8,6 @@ Velodyne Lidar로 생성한 bag파일을 PCD포맷으로 변경 :`rosrun pcl_ros
 
 * `Reads a bag file, saving all ROS point cloud messages on a specified topic as PCD files.`
 
-여러개의 [PCD포맷](http://pointclouds.org/documentation/tutorials/pcd_file_format.php) 파일들 생성
 
 ### 1.2 convert\_pcd\_to\_image
 
@@ -39,8 +36,6 @@ PCD를 이미지로 변경 : `rosrun pcl_ros convert_pcd_to_image <cloud.pcd>`
 ## 1.5 pointcloud\_to\_pcd
 
 > 좀더 자세한 내용 참고 : [ROS/pcl/Tutorials](http://wiki.ros.org/pcl/Tutorials)
-
----
 
 ---
 
