@@ -74,6 +74,20 @@ target_link_libraries(pcd_write_test ${PCL_LIBRARIES})
 
 ---
 
+###### fatal error: ros/ros.h: No such file or directory
+
+```python 
+vi ~/.bashrc
+export catkin_INCLUDE_DIRS="/opt/ros/melodic/include"
+
+vi CMakelists.txt
+include_directories(
+    ${PCL_INCLUDE_DIRS}
+    ${catkin_INCLUDE_DIRS}  ##추가  
+    )
+```
+
+
 #### \[패키지 설치시 에러처리\] Could not find a package configuration file provided by
 
 * apt-get install apt-file && apt-file update
