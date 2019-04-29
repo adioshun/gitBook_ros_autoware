@@ -4,12 +4,7 @@
 
 * [Contents](README.md)
 * [References](references.md)
-
-## ROS\_Intro
-
 * [Intro\_ROS](introros.md)
-* [Udacity Robotics Nanodegree](udacity-robotics-nanodegree.md)
-* [Didi-Udacity Self Driving Car Challenge 2017](didi-udacity-self-driving-car-challenge-2017.md)
 
 ## ROS Basic
 
@@ -65,4 +60,8 @@
 * [AutoWare\_QuickStart\_1](autowarequickstart-1.md)
 * [AutoWare\_UserManual](autoware/autowareusermanual.md)
   * [AutoWare\_Operating](autoware/autowareusermanual/autowareoperating.md)
+
+## MOOC
+
+* [Udacity Robotics Nanodegree](udacity-robotics-nanodegree.md)
 
