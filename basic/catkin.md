@@ -58,7 +58,6 @@ $ catkin build --this --no-deps               # Rebuild only `pkg_c`
 ## 3. [Sample `CMakeLists.txt`](http://www.pointclouds.org/documentation/tutorials/using_pcl_pcl_config.php)
 
 ```python 
-# 요구 CMake 최소 버전
 CMAKE_MINIMUM_REQUIRED (VERSION 2.6 FATAL_ERROR) 
 
 
@@ -68,30 +67,32 @@ SET ( SRC_FILES ground.cpp )
 PROJECT(ground)
 MESSAGE ( ${CMAKE_PROJECT_NAME} )
 
+
+find_package(PCL 1.8 REQUIRED)
+
 find_package(catkin REQUIRED COMPONENTS
-  PCL 
-  roscpp
-  rospy
-  std_msgs
-  geometry_msgs
-  message_generation)
+roscpp
+rospy
+std_msgs
+geometry_msgs
+message_generation)
 
 catkin_package()
 
 # 공통 헤더 파일 Include 디렉토리 (-I)
 include_directories(
-    ${PCL_INCLUDE_DIRS}
-    ${catkin_INCLUDE_DIRS}
-    )
+${PCL_INCLUDE_DIRS}   
+${catkin_INCLUDE_DIRS}
+)
 
 # 공통 링크 라이브러리 (-l)
 # LINK_LIBRARIES( <라이브러리> <라이브러리> ... )
 
 # 공통 링크 라이브러리 디렉토리 (-L)
 link_directories(
-    ${PCL_LIBRARY_DIRS}
-    ${ROS_LIBRARY_DIRS}
-    )
+${PCL_LIBRARY_DIRS}
+${ROS_LIBRARY_DIRS}
+)
 
 add_definitions(${PCL_DEFINITIONS})
 
@@ -99,10 +100,17 @@ add_definitions(${PCL_DEFINITIONS})
 ADD_EXECUTABLE ( ground ${SRC_FILES} )
 
 
-target_link_libraries(ground 
-   ${PCL_LIBRARIES}
-   ${catkin_LIBRARIES}
-   )
+target_link_libraries(ground
+    ${PCL_LIBRARIES}
+    ${catkin_LIBRARIES}
+    )
+
+#.bashrc
+#export catkin_INCLUDE_DIRS="/opt/ros/melodic/include"
+#export catkin_LIBRARIES="/opt/ros/melodic/lib"
+
+#export PCL_LIBRARY=/usr/lib/x86_64-linux-gnu/
+#export PCL_INCLUDE_DIRS="/usr/include/pcl-1.8"
 ```
 
 
