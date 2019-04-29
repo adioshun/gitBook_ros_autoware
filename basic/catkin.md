@@ -98,6 +98,16 @@ target_link_libraries(ground
    )
 ```
 
+###### 빌드후 패키지를 못 찾는 문제 
+
+```python 
+vi ~/.bashrc
+source /opt/ros/melodic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+source ~/catkin_build/devel/setup.bash  #추가 
+```
+
+
 ######  Could not find a package configuration file provided by
 
 * apt-get install apt-file && apt-file update
