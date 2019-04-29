@@ -15,7 +15,7 @@ sudo pip install -U catkin_tools
 
 - catkin init  : 초기화 in `~/catkin_workspace/`
 - catkin create pkg pkg_a    : 패키지 추가 in `~/catkin_workspace/src`
-    - catkin create pkg my_pcl_tutorial --catkin-deps pcl pcl_ros roscpp sensor_msgs
+    - catkin create pkg my_pcl_tutorial --catkin-deps pcl_ros roscpp sensor_msgs
 - catkin build   : 빌드 `~/catkin_ws/devel/lib/`
 - catkin list :
 
@@ -46,7 +46,7 @@ $ catkin build --this --no-deps               # Rebuild only `pkg_c`
 - catkin_init_workspace : 작업공간 생성 in `~/catkin_ws/src`
 - catkin_create_pkg : 패키지 자동 생성 
   - catkin_create_pkg `<새 패키지 이름> <패키지 Dependencies>`
-  - catkin_create_pkg `my_pcl_tutorial` pcl pcl_ros roscpp sensor_msgs
+  - catkin_create_pkg `my_pcl_tutorial` pcl_ros roscpp sensor_msgs
   - `<패키지 Dependencies>`는 생략 후 나중에 package.xml로 지정 가능
 - catkin_make : 빌드 
 - catkin_find : 검색
