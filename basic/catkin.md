@@ -58,14 +58,51 @@ $ catkin build --this --no-deps               # Rebuild only `pkg_c`
 ## 3. [Sample `CMakeLists.txt`](http://www.pointclouds.org/documentation/tutorials/using_pcl_pcl_config.php)
 
 ```python 
-cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
-project(MY_GRAND_PROJECT)
-find_package(PCL 1.3 REQUIRED COMPONENTS common io)
-include_directories(${PCL_INCLUDE_DIRS})
-link_directories(${PCL_LIBRARY_DIRS})
+# 요구 CMake 최소 버전
+CMAKE_MINIMUM_REQUIRED (VERSION 2.6 FATAL_ERROR) 
+
+
+SET ( SRC_FILES ground.cpp )
+
+# 프로젝트 이름 및 버전
+PROJECT(ground)
+MESSAGE ( ${CMAKE_PROJECT_NAME} )
+
+find_package(catkin REQUIRED COMPONENTS
+  PCL 
+  roscpp
+  rospy
+  std_msgs
+  geometry_msgs
+  message_generation)
+
+catkin_package()
+
+# 공통 헤더 파일 Include 디렉토리 (-I)
+include_directories(
+    ${PCL_INCLUDE_DIRS}
+    ${catkin_INCLUDE_DIRS}
+    )
+
+# 공통 링크 라이브러리 (-l)
+# LINK_LIBRARIES( <라이브러리> <라이브러리> ... )
+
+# 공통 링크 라이브러리 디렉토리 (-L)
+link_directories(
+    ${PCL_LIBRARY_DIRS}
+    ${ROS_LIBRARY_DIRS}
+    )
+
 add_definitions(${PCL_DEFINITIONS})
-add_executable(pcd_write_test pcd_write.cpp)
-target_link_libraries(pcd_write_test ${PCL_LIBRARIES})
+
+
+ADD_EXECUTABLE ( ground ${SRC_FILES} )
+
+
+target_link_libraries(ground 
+   ${PCL_LIBRARIES}
+   ${catkin_LIBRARIES}
+   )
 ```
 
 
