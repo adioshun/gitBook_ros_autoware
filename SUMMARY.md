@@ -9,7 +9,7 @@
 ## ROS Basic
 
 * [명령어](basic/command.md)
-* [catkin](basic/catkin.md)
+* [catkin\_make & catkin build](basic/catkin.md)
 
 ## ROS \_Programing
 
@@ -50,7 +50,8 @@
 
 ## Tips
 
-* [Multi msg subscribe](tips/multi-msg-subscribe.md)
+* [Multi msg subscribe](TIPs/multi-msg-subscribe.md)
+* [Using a C++ class in Python](TIPs/Using-a-Cpp-class-in-Python.md)
 
 ## AutoWare
 
