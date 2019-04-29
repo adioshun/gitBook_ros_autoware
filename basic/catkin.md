@@ -74,6 +74,8 @@ target_link_libraries(pcd_write_test ${PCL_LIBRARIES})
 
 ---
 
+## 에러처리 
+
 ###### fatal error: ros/ros.h: No such file or directory
 
 ```python 
@@ -87,8 +89,16 @@ include_directories(
     )
 ```
 
+###### undefined reference to `ros::spin()'
 
-#### \[패키지 설치시 에러처리\] Could not find a package configuration file provided by
+```python 
+vi CMakeLists.txt
+target_link_libraries(ground 
+   ${catkin_LIBRARIES} #추가 
+   )
+```
+
+######  Could not find a package configuration file provided by
 
 * apt-get install apt-file && apt-file update
 
