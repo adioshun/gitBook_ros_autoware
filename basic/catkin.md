@@ -110,7 +110,7 @@ target_link_libraries(ground
 #export catkin_LIBRARIES="/opt/ros/melodic/lib"
 
 #export PCL_LIBRARY="/usr/local/lib"
-#export PCL_INCLUDE_DIRS="/usr/include/pcl-1.8"
+#export PCL_INCLUDE_DIRS="/usr/local/include/pcl-1.9"
 ```
 
 
