@@ -43,7 +43,64 @@ $ catkin build --this --no-deps               # Rebuild only `pkg_c`
 
 ## 2. [catkin make](http://wiki.ros.org/ko/ROS/Tutorials/BuildingPackages)
 
-catkin_init_workspace : 작업공간 생성 in `~/catkin_ws/src`
-catkin_create_pkg : 패키지 자동 생성 
-catkin_make : 빌드 
-catkin_find : 검색
+- catkin_init_workspace : 작업공간 생성 in `~/catkin_ws/src`
+- catkin_create_pkg : 패키지 자동 생성 
+  - catkin_create_pkg `<새 패키지 이름> <패키지 Dependencies>`
+  - catkin_create_pkg `my_pcl_tutorial` pcl pcl_ros roscpp sensor_msgs
+  - `<패키지 Dependencies>`는 생략 후 나중에 package.xml로 지정 가능
+- catkin_make : 빌드 
+- catkin_find : 검색
+
+
+
+---
+
+## 3. [Sample `CMakeLists.txt`](http://www.pointclouds.org/documentation/tutorials/using_pcl_pcl_config.php)
+
+```python 
+cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+project(MY_GRAND_PROJECT)
+find_package(PCL 1.3 REQUIRED COMPONENTS common io)
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+add_executable(pcd_write_test pcd_write.cpp)
+target_link_libraries(pcd_write_test ${PCL_LIBRARIES})
+```
+
+
+
+
+
+---
+
+#### \[패키지 설치시 에러처리\] Could not find a package configuration file provided by
+
+* apt-get install apt-file && apt-file update
+
+  ```python
+  Could not find a package configuration file provided by "Qt5Core"
+    (requested version 5.0) with any of the following names:
+
+      Qt5CoreConfig.cmake
+      qt5core-config.cmake
+
+    Add the installation prefix of "Qt5Core" to CMAKE_PREFIX_PATH or set
+    "Qt5Core_DIR" to a directory containing one of the above files.  If
+    "Qt5Core" provides a separate development package or SDK, be sure it has
+    been installed.
+  ```
+
+* run `apt-file search Qt5CoreConfig.cmake`
+
+  * review the result
+
+  ```python
+  qtbase5-dev: /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake
+  qtbase5-gles-dev: /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake
+  ```
+
+* Install the missing package `sudo apt install qtbase5-dev`
+
+> ref [What package do I need to build...](https://askubuntu.com/questions/374755/what-package-do-i-need-to-build-a-qt-5-cmake-application/374775)
+
