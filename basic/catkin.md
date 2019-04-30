@@ -60,12 +60,13 @@ $ catkin build --this --no-deps               # Rebuild only `pkg_c`
 ```python 
 CMAKE_MINIMUM_REQUIRED (VERSION 2.6 FATAL_ERROR) 
 
-
 SET ( SRC_FILES ground.cpp )
+SET ( EXEC_FILE ground )
 
 # 프로젝트 이름 및 버전
 PROJECT(ground)
 MESSAGE ( ${CMAKE_PROJECT_NAME} )
+#MESSAGE ( [<Type>] <메시지> ) #Type = STATUS, FATAL_ERROR 
 
 
 find_package(PCL 1.8 REQUIRED)
@@ -85,25 +86,32 @@ ${PCL_INCLUDE_DIRS}
 ${catkin_INCLUDE_DIRS}
 )
 
+
+#ADD_LIBRARY ( <라이브러리_이름> [STATIC|SHARED|MODULE] <소스_파일> <소스_파일> ... )
+
 # 공통 링크 라이브러리 (-l)
 # LINK_LIBRARIES( <라이브러리> <라이브러리> ... )
 
 # 공통 링크 라이브러리 디렉토리 (-L)
-link_directories(
+
+LINK_DIRECTORIES (
 ${PCL_LIBRARY_DIRS}
 ${ROS_LIBRARY_DIRS}
 )
 
-add_definitions(${PCL_DEFINITIONS})
+
+ADD_DEFINITIONS(${PCL_DEFINITIONS})
 
 
-ADD_EXECUTABLE ( ground ${SRC_FILES} )
+ADD_EXECUTABLE ( ${EXEC_FILE} ${SRC_FILES} )
 
 
-target_link_libraries(ground
+TARGET_LINK_LIBRARIES(${EXEC_FILE}
     ${PCL_LIBRARIES}
     ${catkin_LIBRARIES}
     )
+
+#https://www.tuwlab.com/ece/27260
 
 #.bashrc
 #export catkin_INCLUDE_DIRS="/opt/ros/melodic/include"
