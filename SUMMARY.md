@@ -31,6 +31,8 @@
 * [ROSbag](rosrosbag.md)
 * [PlotJuggler](plotjuggler.md)
 * [Rviz](Package/rviz.md)
+  * [Rviz Tools for python](Package/rviz/rviz-tools-for-python.md)
+  * [Path](Package/rviz/path.md)
 * [RViz](rosrviz.md)
   * [path](rosrviz/path.md)
 * [ROS\_PCL](rospcl.md)
