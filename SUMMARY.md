@@ -30,6 +30,7 @@
   * [rqt\_plot](rosrqt-graph/rqtplot.md)
 * [ROSbag](rosrosbag.md)
 * [PlotJuggler](plotjuggler.md)
+* [Rviz](Package/rviz.md)
 * [RViz](rosrviz.md)
   * [path](rosrviz/path.md)
 * [ROS\_PCL](rospcl.md)
