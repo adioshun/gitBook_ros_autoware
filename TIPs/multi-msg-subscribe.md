@@ -53,7 +53,7 @@ def callback(mode, penalty):
 mode_sub = message_filters.Subscriber('mode', Int32)
 penalty_sub = message_filters.Subscriber('penalty', Float32)
 
-ts = message_filters.ApproximateTimeSynchronizer([mode_sub, penalty_sub], 10, 0.1, allow_headerless=True)
+ts = message_filters.ApproximateTimeSynchronizer([mode_sub, penalty_sub], queue_size=5, slop=0.1, allow_headerless=True)
 ts.registerCallback(callback)
 rospy.spin()
 ```
