@@ -186,8 +186,8 @@ source ~/catkin_build/devel/setup.bash  #추가
 
 ```
 locate PCLConfig.cmake
-vi  /opt/ros/melodic/share/catkin/cmake/catkinConfig.cmake 
-set(pcl_DIR "/usr/local/share/pcl/")
+vi  XXX.cmake 
+set(pcl_DIR "/usr/local/share/pcl/PCLConfig.cmake")
 ```
 
 해결법 #2 
