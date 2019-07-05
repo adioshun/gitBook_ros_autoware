@@ -45,8 +45,6 @@
 * [ROS\_SLAM\_NAVIGATION](rosslam-navigation.md)
 * [ROS\_Perception \(0%\)](rosperception.md)
 * [ROS\_AutoVehicle101 \(30%\)](rosautovehicle101.md)
-* [YOLOv2 for ROS](yolov2-for-ros.md)
-* [Caffe for ROS](caffe-for-ros.md)
 
 ## Tips
 
