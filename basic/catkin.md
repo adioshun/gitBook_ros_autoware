@@ -190,7 +190,13 @@ vi  XXX.cmake
 set(pcl_DIR "/usr/local/share/pcl/PCLConfig.cmake")
 ```
 
-해결법 #2 
+해결법 #2
+
+```
+cmake .. -DPCL_DIR=/usr/local/share/pcl-1.7
+```
+
+해결법 #3 
 
 * run `apt-file search Qt5CoreConfig.cmake`
 
