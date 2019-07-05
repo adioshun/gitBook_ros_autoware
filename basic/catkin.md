@@ -169,6 +169,7 @@ source ~/catkin_build/devel/setup.bash  #추가
 * apt-get install apt-file && apt-file update
 
   ```python
+  CMake Error at /opt/ros/melodic/share/catkin/cmake/catkinConfig.cmake:83 (find_package):
   Could not find a package configuration file provided by "pcl" with any of
   the following names:
 
@@ -181,8 +182,13 @@ source ~/catkin_build/devel/setup.bash  #추가
 
   ```
 
-해결법 #1 : set(pcl_DIR "/opt/ros/hydro/share/pcl-1.7/")
+해결법 #1
 
+```
+locate PCLConfig.cmake
+vi  /opt/ros/melodic/share/catkin/cmake/catkinConfig.cmake 
+set(pcl_DIR "/usr/local/share/pcl/")
+```
 
 해결법 #2 
 
