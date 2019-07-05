@@ -129,7 +129,7 @@ TARGET_LINK_LIBRARIES(${EXEC_FILE}
 
 ## 에러처리 
 
-###### fatal error: ros/ros.h: No such file or directory
+### fatal error: ros/ros.h: No such file or directory
 
 ```python 
 vi ~/.bashrc
@@ -142,7 +142,7 @@ include_directories(
     )
 ```
 
-###### undefined reference to `ros::spin()'
+### undefined reference to `ros::spin()'
 
 ```python 
 vi CMakeLists.txt
@@ -151,7 +151,7 @@ target_link_libraries(ground
    )
 ```
 
-###### 빌드후 패키지를 못 찾는 문제 
+### 빌드후 패키지를 못 찾는 문제 
 
 ```python 
 vi ~/.bashrc
@@ -161,26 +161,32 @@ source ~/catkin_build/devel/setup.bash  #추가
 ```
 
 
-######  Could not find a package configuration file provided by
+
+
+
+###  Could not find a package configuration file provided by
 
 * apt-get install apt-file && apt-file update
 
   ```python
-  Could not find a package configuration file provided by "Qt5Core"
-    (requested version 5.0) with any of the following names:
+  Could not find a package configuration file provided by "pcl" with any of
+  the following names:
 
-      Qt5CoreConfig.cmake
-      qt5core-config.cmake
+    pclConfig.cmake
+    pcl-config.cmake
 
-    Add the installation prefix of "Qt5Core" to CMAKE_PREFIX_PATH or set
-    "Qt5Core_DIR" to a directory containing one of the above files.  If
-    "Qt5Core" provides a separate development package or SDK, be sure it has
-    been installed.
+  Add the installation prefix of "pcl" to CMAKE_PREFIX_PATH or set "pcl_DIR"
+  to a directory containing one of the above files.  If "pcl" provides a
+  separate development package or SDK, be sure it has been installed.
+
   ```
 
-* run `apt-file search Qt5CoreConfig.cmake`
+해결법 #1 : set(pcl_DIR "/opt/ros/hydro/share/pcl-1.7/")
 
-  * review the result
+
+해결법 #2 
+
+* run `apt-file search Qt5CoreConfig.cmake`
 
   ```python
   qtbase5-dev: /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake
