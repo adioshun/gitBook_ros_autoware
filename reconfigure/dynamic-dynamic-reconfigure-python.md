@@ -2,11 +2,17 @@
 
 > '.cfg' files and 'CMakeLists.txt' 없이 쉽게 하는법 
 
-## 1.  ddynamic_reconfigure추가 
+## 1.  설치  
 
-- [ddynamic_reconfigure.py](https://gist.githubusercontent.com/adioshun/07d78f1400cc80b66950494263883482/raw/f9b12ab220b10f8c069f8775da892b190d1f7a5c/ddynamic_reconfigure.py) 파일을 `include`에 추가 
+ [ddynamic_reconfigure.py](https://gist.githubusercontent.com/adioshun/07d78f1400cc80b66950494263883482/raw/f9b12ab220b10f8c069f8775da892b190d1f7a5c/ddynamic_reconfigure.py) 파일을 `import`에 추가 
 
-## 2. 적용할 동적 변수/ 추가 
+## 2. 적용 
+
+### 2.1 Global Reconfigure 
+
+> 단일 `DyConfigure 클래스(ddynamic_reconfigure.py)`에서 모든 설정 관리 
+
+#### A. 적용할 동적 변수/ 추가 
 
 ddynamic_reconfigure.py의 [DyConfigure 클래스] 변경 
 
@@ -25,7 +31,7 @@ self.ddr.add_variable("enumerate", "enumerate variable", 1, 0, 3, edit_method=en
 
 
 ```
-## 3. Main 함수 
+#### B. Main 함수 
 
 ```python
 import sys
@@ -50,9 +56,9 @@ if __name__ == "__main__":
 
 ---
 
-## sample 
+### 2.1 Local Reconfigure 
 
-> `ddynamic_reconfigure.py`를 따로 설정시 
+> 코드별 `DyConfigure 클래스(ddynamic_reconfigure.py)`에서 설정 별도 관리 
 
 ```python 
 
