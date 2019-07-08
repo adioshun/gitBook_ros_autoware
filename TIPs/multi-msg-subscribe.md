@@ -1,9 +1,39 @@
+# 두개 이상의 Topic 수신 하기 
 
-# [message_filters](http://docs.ros.org/melodic/api/message_filters/html/python/index.html)
+## 1. class 활용 
+
+```
+#!/usr/bin/env python3
+# coding: utf-8
+
+import rospy
+from sensor_msgs.msg import PointCloud2
+
+class BgRemoval:
+    def __init__(self):
+        self.lidar_1 = rospy.Subscriber('/lidar_201/velodyne_points', PointCloud2, self.callback1) 
+        self.lidar_2 = rospy.Subscriber('/lidar_201/velodyne_points', PointCloud2, self.callback2) 
+
+    def callback1(self, lidar1):
+        print("Lidar1")
+
+    def callback2(self, lidar2):
+        print("Lidar2\n")
+
+if __name__ == '__main__':
+    rospy.init_node('Background Removal', anonymous=True)
+    bg = BgRemoval()
+    rospy.spin()
+
+```
+ 
+---
+   
+## 2. [message_filters](http://docs.ros.org/melodic/api/message_filters/html/python/index.html) 활용 
 
 > [Study ROS message_filters](http://robonchu.hatenablog.com/entry/2017/06/11/121000) : Python, Cpp
 
-## Time Synchronizer
+### 2.1 Time Synchronizer
 
 > The TimeSynchronizer filter synchronizes incoming channels by the timestamps contained in their headers, and outputs them in the form of a single callback that takes the same number of channels. The C++ implementation can synchronize up to 9 channels.
 
@@ -38,7 +68,7 @@ if __name__ == "__main__":
 ```
     
     
-## ApproximateTime Policy
+### 2.2 ApproximateTime Policy
 
 > The message_filters::sync_policies::ApproximateTime policy uses an adaptive algorithm to match messages based on their timestamp.
 
