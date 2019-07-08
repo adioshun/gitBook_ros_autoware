@@ -11,8 +11,10 @@
 
 ## GUI :
 
-`rqt_reconfigure`
-`sudo apt-get install ros-$DISTRO-rqt-reconfigure`
+````
+$ sudo apt-get install ros-$DISTRO-rqt-reconfigure
+$ rosrun rqt_reconfigure rqt_reconfigure
+```
 
 ## CUI :
 
