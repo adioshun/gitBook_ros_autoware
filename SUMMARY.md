@@ -52,12 +52,9 @@
 
 ## Tips
 
-* [Multi msg subscribe_tmp](TIPs/multi-msg-subscribe.md)
-* [Using a C++ class in Python_tmp](TIPs/Using-a-Cpp-class-in-Python.md)
 * [skeleton code\(Python\)](Tips/Skeleton-code-Python.md)
 * [Multi msg subscribe](Tips/multi-msg-subscribe.md)
 * [Using a C++ class in Python](Tips/Using-a-Cpp-class-in-Python.md)
-
 
 ## AutoWare
 
