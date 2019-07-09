@@ -39,9 +39,6 @@
 * [TF](Package/tf.md)
 * [ROS\_PCL](rospcl.md)
 * [cv\_bridge](cvbridge.md)
-* [reconfigure](reconfigure.md)
-  * [Dynamic dynamic reconfigure python](reconfigure/dynamic-dynamic-reconfigure-python.md)
-* [ROS\_QtCreator](rosqtcreator.md)
 * [ROS\_Serial](rosserial.md)
 
 ## ROS Application
@@ -58,12 +55,12 @@
 
 ## AutoWare
 
-* [Intro\_AutoWare](autoware/introautoware.md)
-* [List\_AutoWare](autoware/listautoware.md)
-* [AutoWare\_How\_To\_Learn\_ROS\_SDC \(100%\)](autoware/autowareros-sdc.md)
-* [AutoWare\_QuickStart\_1](autowarequickstart-1.md)
-* [AutoWare\_UserManual](autoware/autowareusermanual.md)
-  * [AutoWare\_Operating](autoware/autowareusermanual/autowareoperating.md)
+* [Intro\_AutoWare](Autoware/introautoware.md)
+* [List\_AutoWare](Autoware/listautoware.md)
+* [AutoWare\_How\_To\_Learn\_ROS\_SDC \(100%\)](Autoware/autowareros-sdc.md)
+* [AutoWare\_QuickStart\_1](Autowarequickstart-1.md)
+* [AutoWare\_UserManual](Autoware/autowareusermanual.md)
+  * [AutoWare\_Operating](Autoware/autowareusermanual/autowareoperating.md)
 
 ## Apollo
 
