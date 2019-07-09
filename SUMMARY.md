@@ -25,11 +25,10 @@
   * [Actor생성하기](Tools/Gazebo/actor.md)
 * [RQT](Tools/RQT/README.md)
   * [rqt\_plot](Tools/Rqt/rqt-plot.md)
-  * [Rqt-plugins](Tools/Rqt/rqt-plugins.md)
+  * [rqt-plugins](Tools/Rqt/rqt-plugins.md)
 * [Rviz](Tools/Rviz/README.md)
   * [Rviz Tools for python](Tools/Rviz/rviz-tools-for-python.md)
   * [Path](Tools/Rviz/path.md)
-
 
 ## ROS package
 
