@@ -50,6 +50,8 @@
 
 * [Multi msg subscribe](TIPs/multi-msg-subscribe.md)
 * [Using a C++ class in Python](TIPs/Using-a-Cpp-class-in-Python.md)
+* [skeleton code(Python)](Tips/Skeleton-code-Python.md)
+
 
 ---
 ## AutoWare
