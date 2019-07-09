@@ -4,7 +4,6 @@
 
 * [Contents](README.md)
 * [References](references.md)
-* [Intro\_ROS](introros.md)
 
 ## Fundamentals
 
