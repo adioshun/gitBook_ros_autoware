@@ -29,6 +29,9 @@
 * [Rviz](Tools/Rviz/README.md)
   * [Rviz Tools for python](Tools/Rviz/rviz-tools-for-python.md)
   * [Path](Tools/Rviz/path.md)
+* [Reconfigure](Tools/Reconfigure/README.md)
+  * [Dynamic dynamic reconfigure python](Tools/Reconfigure/dynamic-dynamic-reconfigure-python.md)
+* [QtCreator](Tools/QtCreator/README.md)
 
 ## ROS package
 
@@ -49,9 +52,12 @@
 
 ## Tips
 
-* [Multi msg subscribe](TIPs/multi-msg-subscribe.md)
-* [Using a C++ class in Python](TIPs/Using-a-Cpp-class-in-Python.md)
+* [Multi msg subscribe_tmp](TIPs/multi-msg-subscribe.md)
+* [Using a C++ class in Python_tmp](TIPs/Using-a-Cpp-class-in-Python.md)
 * [skeleton code\(Python\)](Tips/Skeleton-code-Python.md)
+* [Multi msg subscribe](Tips/multi-msg-subscribe.md)
+* [Using a C++ class in Python](Tips/Using-a-Cpp-class-in-Python.md)
+
 
 ## AutoWare
 
