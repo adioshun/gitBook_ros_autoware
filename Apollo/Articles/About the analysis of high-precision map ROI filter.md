@@ -93,8 +93,39 @@ void LidarProcessSubnode::OnPointCloud(const sensor_msgs::PointCloud2& message) 
 
 도로를 파악하기 위해서는 고정밀 지도가 이용된다. `The driving area of ​​the road surface and intersection needs to be inspected by high-precision map. `
 
-이 단계에서 At this stage, the coordinate system is transformed by tf (the transformation matrix of the lidar coordinate system to the world coordinate system), and the velodyne_pose_world is calculated with velodyne_pose (lidar is in the world coordinate system). Coordinates).
+이 단계에서 기준 좌표계로의 센서 좌표계 변환이 이루어 진다. `At this stage, the coordinate system is transformed by tf (the transformation matrix of the lidar coordinate system to the world coordinate system), and the velodyne_pose_world is calculated with velodyne_pose (lidar is in the world coordinate system). Coordinates).`
 
-The real ROI is using the `GetROI` function . 
+실질적인 ROS는 `GetROI`에서 수행된다. `The real ROI is using the GetROI function . `
+
+**GetVelodyneTrans function**에서 좌표계 변환을 수행한다. `A simple analysis of the GetVelodyneTrans function , this function is the transformation matrix that produces the lidar coordinate system to the world coordinate system. `
+
+The implementation process can be briefly followed by a functional analysis:
+
+```cpp
+/// file in apollo/modules/perception/onboard/transform_input.cc
+bool GetVelodyneTrans(const double query_time, Eigen::Matrix4d* trans) {
+  ...
+  // Step1: lidar refer to novatel(GPS/IMU)
+  geometry_msgs::TransformStamped transform_stamped;
+  try {
+    transform_stamped = tf2_buffer.lookupTransform(FLAGS_lidar_tf2_frame_id, FLAGS_lidar_tf2_child_frame_id, query_stamp);
+  } 
+  Eigen::Affine3d affine_lidar_3d;
+  tf::transformMsgToEigen(transform_stamped.transform, affine_lidar_3d);
+  Eigen::Matrix4d lidar2novatel_trans = affine_lidar_3d.matrix();
+
+  // Step2 notavel(GPS/IMU) refer to world coordinate system
+  try {
+    transform_stamped = tf2_buffer.lookupTransform(FLAGS_localization_tf2_frame_id, FLAGS_localization_tf2_child_frame_id, query_stamp);
+  } 
+  Eigen::Affine3d affine_localization_3d;
+  tf::transformMsgToEigen(transform_stamped.transform, affine_localization_3d);
+  Eigen::Matrix4d novatel2world_trans = affine_localization_3d.matrix();
+
+  * trans = novatel2world_trans * lidar2novatel_trans; 
+}
+```
+
+
 
 
