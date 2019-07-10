@@ -11,4 +11,7 @@ https://spectrum.chat/apollo?tab=posts
 
 https://www.apollographql.com/docs/community/
 
+
+[Why Apollo: Advantages, Disadvantages & Alternatives](https://www.robinwieruch.de/why-apollo-advantages-disadvantages-alternatives/)
+
 그래프QL은 페이스북이 2012년에 개발하여 2015년에 공개적으로 발표된 데이터 질의어이다.
