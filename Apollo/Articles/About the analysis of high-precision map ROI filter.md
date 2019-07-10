@@ -68,10 +68,33 @@ void LidarProcessSubnode::OnPointCloud(const sensor_msgs::PointCloud2& message) 
 }
 ```
 
+다음 절차는 포인트 클라우드에서 ROI영역을 추출 하는 것이다. `the next step is to retrieve the ROI areas from the point cloud , which contain the driving areas of the road and intersection.`
+
+```cpp
+/// file in apollo/modules/perception/obstacle/onboard/lidar_process_subnode.cc
+void LidarProcessSubnode::OnPointCloud(const sensor_msgs::PointCloud2& message) {
+  /// get velodyne2world transfrom
+  if (!GetVelodyneTrans(kTimeStamp, velodyne_trans.get())) {
+  	...
+  }
+  /// call hdmap to get ROI
+  HdmapStructPtr hdmap = nullptr;
+  if (hdmap_input_) {
+    PointD velodyne_pose = {0.0, 0.0, 0.0, 0};  // (0,0,0)
+    Affine3d temp_trans(*velodyne_trans);
+    PointD velodyne_pose_world = pcl::transformPoint(velodyne_pose, temp_trans);
+    hdmap.reset(new HdmapStruct);
+    hdmap_input_->GetROI(velodyne_pose_world, FLAGS_map_radius, &hdmap);
+    PERF_BLOCK_END("lidar_get_roi_from_hdmap");
+  }
+}
+```
 
 
+도로를 파악하기 위해서는 고정밀 지도가 이용된다. `The driving area of ​​the road surface and intersection needs to be inspected by high-precision map. `
 
+이 단계에서 At this stage, the coordinate system is transformed by tf (the transformation matrix of the lidar coordinate system to the world coordinate system), and the velodyne_pose_world is calculated with velodyne_pose (lidar is in the world coordinate system). Coordinates).
 
-
+The real ROI is using the `GetROI` function . 
 
 
