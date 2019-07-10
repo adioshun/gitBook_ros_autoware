@@ -188,6 +188,43 @@ void LidarProcessSubnode::OnPointCloud(const sensor_msgs::PointCloud2& message) 
 }
 ```
 
+좌표계 변환과 이후 ROI LUT construction작업은 `HdmapROIFilter` 클래스에서 수행된다. `The coordinate transformation and subsequent steps of the ROI LUT construction and point query are done in the HdmapROIFilter class.`
+
+이단계에서 사용되는 변환 메트릭스는 `lidar2world_trans matrix`이다. `The transformation matrix used in this phase is the above lidar2world_trans matrix.`
+
+After reading the official instructions and matching the specific code, there may be some doubts. Here are some research ideas for transformation. 
+
+The implementation of the coordinate transformation is done in the `HdmapROIFilter::Filter` function 
+
+The specific transformation process is as follows:
+
+```cpp
+/// file in apollo/modules/perception/obstacle/lidar/roi_filter/hdmap_roi_filter/hdmap_roi_filter.cc
+bool HdmapROIFilter::Filter(const pcl_util::PointCloudPtr& cloud,
+                            const ROIFilterOptions& roi_filter_options,
+                            pcl_util::PointIndices* roi_indices) {
+  Eigen::Affine3d temp_trans(*(roi_filter_options.velodyne_trans));
+  std::vector<PolygonDType> polygons;
+  MergeHdmapStructToPolygons(roi_filter_options.hdmap, &polygons);
+  ...
+  // Transform polygon and point to local coordinates
+  pcl_util::PointCloudPtr cloud_local(new pcl_util::PointCloud);
+  std::vector<PolygonType> polygons_local;
+  TransformFrame(cloud, temp_trans, polygons, &polygons_local, cloud_local);
+  ...
+}
+
+void HdmapROIFilter::TransformFrame(
+    const pcl_util::PointCloudConstPtr& cloud, const Eigen::Affine3d& vel_pose,
+    const std::vector<PolygonDType>& polygons_world,
+    std::vector<PolygonType>* polygons_local,
+    pcl_util::PointCloudPtr cloud_local) {
+  ...
+}
+
+```
+
+
 
 
 
