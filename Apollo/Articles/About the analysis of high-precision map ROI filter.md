@@ -126,6 +126,68 @@ bool GetVelodyneTrans(const double query_time, Eigen::Matrix4d* trans) {
 }
 ```
 
+transformation matrix획득을 위한 절차는 두단계로 구분 된다. `Therefore, the acquisition transformation matrix is ​​divided into two steps.`
+- The first step is to obtain the transformation matrix of the lidar coordinate system of the lidar to the IMU coordinate system of the inertial unit ; 
+- the second step is to obtain the transformation matrix of the inertial unit IMU coordinate system to the world coordinate system . 
+
+From the above code, we can clearly see that there are two parts of code with high similarity:
+
+  
+    
+- Calculate the affine transformation matrix lidar2novatel_trans, the lidar lidar coordinate system to the inertial IMU coordinate system (vehicle coordinate system) transformation matrix. Although this matrix is ​​calculated by calling the lookupTransform function of the ROS tf module, it is actually determined by the foreign parameter and remains unchanged during the running process.
+  
+```cpp
+/// file in apollo/modules/localization/msf/params/velodyne_params/velodyne64_novatel_extrinsics_example.yaml
+child_frame_id: velodyne64
+transform:
+  translation:
+    x: -0.0581372003122598
+    y: 1.459274166013735
+    z: 1.24965
+  rotation:
+    x: 0.02748694630673456
+    y: -0.03223034579615043
+    z: 0.7065742186090662
+    w: 0.706369978261802
+header:
+  seq: 0
+  stamp:
+    secs: 1512689414
+    nsecs: 0
+  frame_id: novatel
+```
+
+- Calculate the affine transformation matrix novatel2world_trans, the affine transformation matrix of the inertial unit IMU coordinate system (vehicle coordinate system) relative to the world coordinate system.
+
+- The affine transformation matrix lidar2world_trans is calculated, and finally the two matrices are multiplied to obtain the transformation matrix of the lidar lidar coordinate system to the world coordinate system.
+
+
+### 1.3 Coordinate transformation
+
+```cpp
+/// file in apollo/modules/perception/obstacle/onboard/lidar_process_subnode.cc
+void LidarProcessSubnode::OnPointCloud(const sensor_msgs::PointCloud2& message) {
+  /// get velodyne2world transfrom
+  ...
+  /// call hdmap to get ROI
+  ...
+  /// call roi_filter
+  PointCloudPtr roi_cloud(new PointCloud);
+  if (roi_filter_ != nullptr) {
+    PointIndicesPtr roi_indices(new PointIndices);
+    ROIFilterOptions roi_filter_options;
+    roi_filter_options.velodyne_trans = velodyne_trans;
+    roi_filter_options.hdmap = hdmap;
+    if (roi_filter_->Filter(point_cloud, roi_filter_options, roi_indices.get())) {
+      pcl::copyPointCloud(*point_cloud, *roi_indices, *roi_cloud);
+      roi_indices_ = roi_indices;
+    } else {
+      ...
+    }
+  }
+}
+```
+
 
 
 
