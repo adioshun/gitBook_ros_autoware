@@ -1,9 +1,7 @@
 # [About the analysis of high-precision map ROI filter](https://mp.weixin.qq.com/s?__biz=MzI1NjkxOTMyNQ==&mid=2247485710&idx=1&sn=07ba741effb95e10d40e175ba61cd3d1&chksm=ea1e1b7cdd69926a42ff1a809e4791810661f9a15a7c590b0924eb0a3728ba9a365622a3f068&mpshare=1&scene=23&srcid=0306ludMb9jq80wVdt7JKWxi#rd)
 
 
-## 1. high-resolution map ROI filter
-
-### 1.1 데이터 수신(ROS) & 변환(PCL)
+## 1 데이터 수신(ROS) & 변환(PCL)
 
 - 가장 먼저 수행 된다. `The high-resolution map ROI filter is the first process of callback. `
 
@@ -43,7 +41,7 @@ uint8[] data         # Actual point data, size is (row_step*height)
 bool is_dense        # True if there are no invalid points
 ```
 
-### 1.2 Data conversion and ROI generation
+## 2 Data conversion and ROI generation
 
 
 
@@ -162,7 +160,7 @@ header:
 - The affine transformation matrix lidar2world_trans is calculated, and finally the two matrices are multiplied to obtain the transformation matrix of the lidar lidar coordinate system to the world coordinate system.
 
 
-### 1.3 Coordinate transformation
+## 3 Coordinate transformation
 
 ```cpp
 /// file in apollo/modules/perception/obstacle/onboard/lidar_process_subnode.cc
@@ -224,7 +222,25 @@ void HdmapROIFilter::TransformFrame(
 
 ```
 
+Note 1: 
+- `MergeHdmapStructToPolygons`함수는 교차로와 도로의 포인트 클라우드를 polygons로 포함 시킨다. `The MergeHdmapStructToPolygons function in the above code is responsible for incorporating the point cloud of the intersection and the road surface into the polygon collection polygons.`
+- `roi_filter_options`에서의 데이터는 고밀도 지도에서 얻어온 교차로와 도로 데이터(기준좌표) 들이다. `Here, the data in the roi_filter_options is the intersection and road information obtained through the high-precision map query, which is based on the world coordinate system.`
+- 따라서 폴리곤으로 합쳐진 결과값역시 기준 좌표계를 따른다. `So the result of the merged polygons is also the data of the world coordinate system.`
 
 
+Note 2: 
+- 입력된 포인트 클라우드 데이터는 센서 좌표계로 되어 있으며 cloud_local, polygons_local로 변경이 필요 하다. local좌표계는 Annotation에 기술 되어 있다. `The input cloud is point cloud data based on the lidar coordinate system, and the following code needs to be converted into cloud_local, polygons_local, and the local coordinate system is explained according to the annotation. `
+- 여기서 local좌표계 센서 좌표계로 보면 된다. `Then, what is the coordinate system of this local coordinate system? If you can understand the TransformFrame function, it is not difficult to find: this so-called "local coordinate system" is actually very similar to the lidar coordinate system.`
+- He represents the ENU coordinate system with lidar as the origin . 
+- This coordinate system is X (East)-Y. (North)-Z (day) is the two-dimensional projected coordinate system of the coordinate axis. 
+
+
+In the TransformFrame function,
+```cpp
+Eigen::Vector3d vel_location = vel_pose.translation();
+Eigen::Matrix3d vel_rot = vel_pose.linear();
+Eigen::Vector3d x_axis = vel_rot.row(0);
+Eigen::Vector3d y_axis = vel_rot.row(1);
+```
 
 
