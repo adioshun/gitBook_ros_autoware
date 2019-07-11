@@ -61,12 +61,6 @@
 * [AutoWare\_UserManual](Autoware/autowareusermanual.md)
   * [AutoWare\_Operating](Autoware/autowareusermanual/autowareoperating.md)
 
-## Apollo
-
-* [README](Apollo/README.md)
-* [Articles](Apollo/Articles/README.md)
- * [About the analysis of high-precision map ROI filter](Apollo/Articles/About the analysis of high-precision map ROI filter.md)
-
 ## MOOC
 
 * [Udacity Robotics Nanodegree](udacity-robotics-nanodegree.md)
