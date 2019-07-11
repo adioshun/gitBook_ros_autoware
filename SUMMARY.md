@@ -61,13 +61,6 @@
 * [AutoWare\_UserManual](Autoware/autowareusermanual.md)
   * [AutoWare\_Operating](Autoware/autowareusermanual/autowareoperating.md)
 
-## Apollo
-
-* [README](Apollo/README.md)
-* [Apollo Lidar 3D Obstacle Perception](Apollo/Articles/README.md)
- * [About the analysis of high-precision map ROI filter](Apollo/Articles/About the analysis of high-precision map ROI filter.md)
- * [Apollo perceptual analysis based on CNN segmentation](Apollo/Articles/Apollo perceptual analysis based on CNN segmentation.md)
-
 ## MOOC
 
 * [Udacity Robotics Nanodegree](udacity-robotics-nanodegree.md)
