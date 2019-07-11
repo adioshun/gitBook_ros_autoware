@@ -230,7 +230,7 @@ Note 1:
 
 Note 2: 
 - 입력된 포인트 클라우드 데이터는 센서 좌표계로 되어 있으며 cloud_local, polygons_local로 변경이 필요 하다. local좌표계는 Annotation에 기술 되어 있다. `The input cloud is point cloud data based on the lidar coordinate system, and the following code needs to be converted into cloud_local, polygons_local, and the local coordinate system is explained according to the annotation. `
-- 여기서 local좌표계 센서 좌표계로 보면 된다. `Then, what is the coordinate system of this local coordinate system? If you can understand the TransformFrame function, it is not difficult to find: this so-called "local coordinate system" is actually very similar to the lidar coordinate system.`
+- 여기서 local좌표계는 센서 좌표계라고 생각 하면 된다. `Then, what is the coordinate system of this local coordinate system? If you can understand the TransformFrame function, it is not difficult to find: this so-called "local coordinate system" is actually very similar to the lidar coordinate system.`
 - He represents the ENU coordinate system with lidar as the origin . 
 - This coordinate system is X (East)-Y. (North)-Z (day) is the two-dimensional projected coordinate system of the coordinate axis. 
 
@@ -243,4 +243,51 @@ Eigen::Vector3d x_axis = vel_rot.row(0);
 Eigen::Vector3d y_axis = vel_rot.row(1);
 ```
 
+- `Vel_location` is the translation component of the **lidar coordinate system** relative to the **world coordinate system**, and 
+- `vel_rot` is the rotation matrix of the **lidar coordinate system** relative to the **world coordinate system**. 
+- Then the coordinate transformation from the lidar coordinate system to the world coordinate system is actually very simple. 
+- Assuming that there is a coordinate point P(x1, y1, z1) in the lidar coordinate system, the coordinate P_hat of the point in the world coordinate system is: P_hat = Vel_rot * P + vel_location. 
 
+
+Understand this transformation, then observe the transformation code for cloud and polygons:
+```cpp
+polygons_local->resize(polygons_world.size());
+for (size_t i = 0; i < polygons_local->size(); ++i) {
+  const auto& polygon_world = polygons_world[i];
+  auto& polygon_local = polygons_local->at(i);
+  polygon_local.resize(polygon_world.size());
+  for (size_t j = 0; j < polygon_local.size(); ++j) {
+    polygon_local[j].x = polygon_world[j].x - vel_location.x();
+    polygon_local[j].y = polygon_world[j].y - vel_location.y();
+  }
+}
+```
+
+It was also very strange at the beginning, why the final transformation form was `P_local = P_world - translation`. 
+
+Later, after research and speculation (to be confirmed later), the intersection and road polygon information only passed the translation to reach the new local ENU coordinate system, which can be inferred to be the world. 
+
+The coordinate system is also the ENU(east, north, up) coordinate system, so there is no rotation component between the two coordinate systems, and the translation can be directly removed from the world coordinate system to the local ENU coordinate system.
+
+```
+Note that the heights z of polygons_world and polygons_local before and after the transformation are changed, 
+but since the polygons are used to construct the 2D projection grid LUT, 
+the dimension of height z is not concerned, and these do not change z; It will never change.
+```
+
+`P_world = vel_rot * P_local + translation` When the `vel_rot` rotation component is 0: `P_local = P_world - translation`
+
+```cpp
+cloud_local->resize(cloud->size());
+for (size_t i = 0; i < cloud_local->size(); ++i) {
+  const auto& pt = cloud->points[i];
+  auto& local_pt = cloud_local->points[i];
+  Eigen::Vector3d e_pt(pt.x, pt.y, pt.z);
+  local_pt.x = x_axis.dot(e_pt);
+  local_pt.y = y_axis.dot(e_pt);
+}
+
+```
+
+
+> 50% 진행 
