@@ -52,15 +52,6 @@
 * [Multi msg subscribe](Tips/multi-msg-subscribe.md)
 * [Using a C++ class in Python](Tips/Using-a-Cpp-class-in-Python.md)
 
-## AutoWare
-
-* [Intro\_AutoWare](Autoware/introautoware.md)
-* [List\_AutoWare](Autoware/listautoware.md)
-* [AutoWare\_How\_To\_Learn\_ROS\_SDC \(100%\)](Autoware/autowareros-sdc.md)
-* [AutoWare\_QuickStart\_1](Autowarequickstart-1.md)
-* [AutoWare\_UserManual](Autoware/autowareusermanual.md)
-  * [AutoWare\_Operating](Autoware/autowareusermanual/autowareoperating.md)
-
 ## MOOC
 
 * [Udacity Robotics Nanodegree](udacity-robotics-nanodegree.md)
