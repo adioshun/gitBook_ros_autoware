@@ -166,6 +166,10 @@ source ~/catkin_build/devel/setup.bash  #추가
 
 ###  Could not find a package configuration file provided by
 
+
+> rosdep install --from-paths src --ignore-src -r -y
+
+
 * apt-get install apt-file && apt-file update
 
   ```python
