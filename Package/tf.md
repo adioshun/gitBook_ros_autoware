@@ -4,8 +4,36 @@
 
 ## 1. [[ROS] Introduction to tf](http://wiki.ros.org/tf/Tutorials/Introduction%20to%20tf)
 
-- Listening for transforms : http://wiki.ros.org/tf/Tutorials/Writing%20a%20tf%20listener%20%28Python%29
-- Broadcasting transforms : http://wiki.ros.org/tf/Tutorials/Writing%20a%20tf%20broadcaster%20%28Python%29
+## What does tf do? Why should I use tf?
+
+You want to  **see**  what tf can do instead of just reading about it? Check out the  [tf introduction demo](http://wiki.ros.org/tf/Tutorials/Introduction%20to%20tf).
+
+A robotic system typically has many 3D  [coordinate frames](http://wiki.ros.org/geometry/CoordinateFrameConventions)  that change over  **time**, such as a world frame, base frame, gripper frame, head frame, etc. tf keeps track of all these frames over time, and allows you to ask questions like:
+
+-   Where was the head frame relative to the world frame, 5 seconds ago?
+-   What is the pose of the object in my gripper relative to my base?
+-   What is the current pose of the base frame in the map frame?
+
+tf can operate in a  **distributed system**. This means all the information about the coordinate frames of a robot is available to all ROS components on any computer in the system. There is  **no central server**  of transform information.
+
+
+## Tutorials
+
+We created a set of  [tutorials](http://wiki.ros.org/tf/Tutorials)  that walk you through using tf, step by step. You can get started on the  [introduction to tf](http://wiki.ros.org/tf/Tutorials/Introduction%20to%20tf)  tutorial. For a complete list of all tf and tf-related tutorials check out the  [tutorials](http://wiki.ros.org/tf/Tutorials)  page.
+
+There are essentially two tasks that any user would use tf for, listening for transforms and broadcasting transforms.
+
+Anyone using tf will need to listen for transforms:
+
+-   **Listening for transforms**  - Receive and buffer all coordinate frames that are broadcasted in the system, and query for specific transforms between frames. Check out the writing a tf listener tutorial  [(Python)](http://wiki.ros.org/tf/Tutorials/Writing%20a%20tf%20listener%20%28Python%29)  [(C++)](http://wiki.ros.org/tf/Tutorials/Writing%20a%20tf%20listener%20%28C%2B%2B%29).
+    
+
+To extend the capabilities of a robot you will need to start broadcasting transforms.
+
+-   **Broadcasting transforms**  - Send out the relative pose of coordinate frames to the rest of the system. A system can have many broadcasters that each provide information about a different part of the robot. Check out the writing a tf broadcaster tutorial  [(Python)](http://wiki.ros.org/tf/Tutorials/Writing%20a%20tf%20broadcaster%20%28Python%29)  [(C++)](http://wiki.ros.org/tf/Tutorials/Writing%20a%20tf%20broadcaster%20%28C%2B%2B%29).
+    
+
+Once you are finished with the basic tutorials, you can move on to learn about tf and time. The tf and time tutorial  [(Python)](http://wiki.ros.org/tf/Tutorials/tf%20and%20Time%20%28Python%29)[(C++)](http://wiki.ros.org/tf/Tutorials/tf%20and%20Time%20%28C%2B%2B%29)  teaches the basic principles of tf and time. The advanced tutorial about tf and time  [(Python)](http://wiki.ros.org/tf/Tutorials/Time%20travel%20with%20tf%20%28Python%29)  [(C++)](http://wiki.ros.org/tf/Tutorials/Time%20travel%20with%20tf%20%28C%2B%2B%29)  teaches the principles of time traveling with tf.
 
 
 ---
