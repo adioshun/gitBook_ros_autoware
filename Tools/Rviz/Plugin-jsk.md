@@ -17,7 +17,7 @@ $ rviz #Click "PieChart" or "Plotter2D"
 
 ```
 
-## 3. 활용 
+## 3. [활용](https://github.com/jsk-ros-pkg/jsk_visualization/tree/master/jsk_rviz_plugins/samples)
 
 ### 3.1 
 
