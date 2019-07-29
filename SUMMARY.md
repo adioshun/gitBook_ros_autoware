@@ -29,6 +29,7 @@
 * [Rviz](Tools/Rviz/README.md)
   * [Rviz Tools for python](Tools/Rviz/rviz-tools-for-python.md)
   * [Path](Tools/Rviz/path.md)
+  * [jsk plugin](Tools/Rviz/Plugin-jsk.md)
 * [Reconfigure](Tools/Reconfigure/README.md)
   * [Dynamic dynamic reconfigure python](Tools/Reconfigure/dynamic-dynamic-reconfigure-python.md)
 * [QtCreator](Tools/QtCreator/README.md)
