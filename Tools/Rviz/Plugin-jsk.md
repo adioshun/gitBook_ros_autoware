@@ -13,6 +13,7 @@
 $ wget http://mirror.kakao.com/ubuntu/pool/main/p/pangox-compat/libpangox-1.0-0_0.0.2-5_amd64.deb && dpkg -i libpangox-1.0-0_0.0.2-5_amd64.deb
 $ apt-get install -y ros-kinetic-jsk-visualization
 $ roslaunch info_lecture jsk_rviz1.launch
+$ roslaunch /opt/ros/melodic/share/jsk_rviz_plugins/launch/boundingbox_sample.launch
 $ rviz #Click "PieChart" or "Plotter2D" 
 
 ```
