@@ -305,3 +305,6 @@ cmake .. -DPCL_DIR=/usr/local/share/pcl-1.7
 
 > ref [What package do I need to build...](https://askubuntu.com/questions/374755/what-package-do-i-need-to-build-a-qt-5-cmake-application/374775)
 
+---
+
+[When should I use rosdep and when should I use apt or pip?](https://answers.ros.org/question/287544/when-should-i-use-rosdep-and-when-should-i-use-apt-or-pip/)
