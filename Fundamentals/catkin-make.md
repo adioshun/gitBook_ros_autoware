@@ -69,6 +69,17 @@ sudo apt-get install python-catkin-tools
 sudo pip install -U catkin_tools
 ```
 
+### 3.1 [catkin build](http://korearosnews.blogspot.com/2015/03/catkin-catkintools.html)
+
+```python
+#apt-get install python-catkin-tools
+
+mkdir ~/catkin_workspace
+cd ~/catkin_workspace
+mkdir src
+catkin init
+```
+
 ### 1.2 명령어 
 
 - catkin init  : 초기화 in `~/catkin_workspace/`
@@ -100,6 +111,29 @@ $ catkin build --this --no-deps               # Rebuild only `pkg_c`
 ---
 
 ## 2. [catkin make](http://wiki.ros.org/ko/ROS/Tutorials/BuildingPackages)
+
+
+```python
+# SOURCING  ENVIRONMENT - for kinetic version
+source /opt/ros/$ROS_DISTRO/setup.bash
+
+# CREATING A ROS CATKIN WORKSPACE
+mkdir -p ~/catkin_ws/src && cd ~/catkin_ws/
+catkin_make
+cd ./build
+make -j4 -l4
+
+
+### 3.3 후처리 
+
+# SOURCING  CATKIN ENVIRONMENT - and automatically get it to source from now on
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+source ~/catkin_ws/devel/setup.bash; source ~/.bashrc
+echo $ROS_PACKAGE_PATH
+```
+
+
+
 
 - catkin_init_workspace : 작업공간 생성 in `~/catkin_ws/src`
 - catkin_create_pkg : 패키지 자동 생성 
