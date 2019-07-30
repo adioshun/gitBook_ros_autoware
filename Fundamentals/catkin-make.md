@@ -1,3 +1,61 @@
+## 3. 패키지 설치 방법
+
+### 3.1 소스 설치
+
+```python
+# INDIGO VERSION
+cd ~/catkin_ws/src/ && git clone https://github.com/ros-drivers/velodyne.git
+cd velodyne/
+rosdep install --from-paths ./ --ignore-src --rosdistro $ROS_DISTRO -y
+cd ~/catkin_ws/ && catkin_make
+```
+
+### 3.2 apt설치
+
+```
+apt-get install ros-$ROS_DISTRO-velodyne
+```
+
+
+---
+
+## 4. 에러 처리 
+
+###### \[패키지 설치시 에러처리\] Could not find a package configuration file provided by
+
+* apt-get install apt-file && apt-file update
+
+  ```python
+  Could not find a package configuration file provided by "Qt5Core"
+    (requested version 5.0) with any of the following names:
+
+      Qt5CoreConfig.cmake
+      qt5core-config.cmake
+
+    Add the installation prefix of "Qt5Core" to CMAKE_PREFIX_PATH or set
+    "Qt5Core_DIR" to a directory containing one of the above files.  If
+    "Qt5Core" provides a separate development package or SDK, be sure it has
+    been installed.
+  ```
+
+* run `apt-file search Qt5CoreConfig.cmake`
+
+  * review the result
+
+  ```python
+  qtbase5-dev: /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake
+  qtbase5-gles-dev: /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake
+  ```
+
+* Install the missing package `sudo apt install qtbase5-dev`
+
+> ref [What package do I need to build...](https://askubuntu.com/questions/374755/what-package-do-i-need-to-build-a-qt-5-cmake-application/374775)
+
+---
+
+
+
+
 # catkin_make vs. catkin build
 
 > The main difference is the isolated environment that you get with catkin build.
