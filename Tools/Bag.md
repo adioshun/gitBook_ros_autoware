@@ -12,11 +12,18 @@
 저장 : `rosbag record -o chatter.bag /chatter`
 - `-a` : 모두 저장
 
+
 재생 : `rosbag play /{path-to-file}/bagfile_name.bag`
 - 반복 `-l` or `--loop`
 
 자르기 
 - `rosbag filter input.bag output.bag "t.secs >= 1531425960 and t.secs <= 1531426140"`
+
+특정 Topic 제외 하고 저장 or 재생 
+
+- $ rosbag filter file.bag file-no-tf.bag "topic != '/tf'"
+- $ rosbag play my_bag.bag /tf:=/tf_dev_null
+
 
 pcd로 저장 
 - `rosrun pcl_ros bag_to_pcd <input_file.bag> /<topic> <output_directory>`  # pcl_ros 설치 필요 
