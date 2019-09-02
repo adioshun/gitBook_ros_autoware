@@ -9,7 +9,7 @@
 ## 2. 설치 
 
 ```python 
-$ apt-get install -y ros-kinetic-jsk-visualization
+$ apt-get install -y ros-melodic-jsk-visualization
 $ roslaunch /opt/ros/melodic/share/jsk_rviz_plugins/launch/boundingbox_sample.launch
 $ rviz -d /opt/ros/melodic/share/jsk_rviz_plugins/config/bounding_box_sample.rviz #Click "PieChart" or "Plotter2D" 
 
@@ -89,7 +89,7 @@ if __name__ == "__main__":
 ```python 
 from jsk_recognition_msgs.msg import BoundingBox
 
-def jsk_rviz_bbox(frame_id):
+def jsk_rviz_bbox(frame_id, pos_x, pos_y, pos_z,scale_x,scale_y,scale_z ):
     counter = 0
     r = rospy.Rate(24)
     box_a = BoundingBox()
@@ -109,10 +109,14 @@ def jsk_rviz_bbox(frame_id):
     box_a.pose.orientation.y = q[1]
     box_a.pose.orientation.z = q[2]
     box_a.pose.orientation.w = q[3]
+
+    box_a.pose.position.x = pos_x
+    box_a.pose.position.y = pos_y
+    box_a.pose.position.z = pos_z
     
-    box_a.dimensions.x = 1
-    box_a.dimensions.y = 1
-    box_a.dimensions.z = 1
+    box_a.dimensions.x = scale_x#1
+    box_a.dimensions.y = scale_y#1
+    box_a.dimensions.z = scale_z#1
     box_a.value = (counter % 100) / 100.0
     
 
@@ -125,7 +129,7 @@ def jsk_rviz_bbox(frame_id):
 
 
 def callback(input_ros_msg):
-    jsk_rviz_bbox("velodyne")
+    jsk_rviz_bbox("velodyne", pos_x, pox_y, pos_z,1,1,1)
 
 
 if __name__ == "__main__":
