@@ -143,52 +143,54 @@ if __name__ == "__main__":
 
 from jsk_recognition_msgs.msg import BoundingBoxArray
 
-def jsk_rviz_bbox_array(frame_id):
+def jsk_rviz_bbox_array(frame_id, location_array):
+    
     counter = 0
-    r = rospy.Rate(24)
-    now = rospy.Time.now()
-
-    box_a = BoundingBox()    
-    box_a.label = 2    
-    box_a.header.stamp = now    
-    box_a.header.frame_id = frame_id
-
-    q = quaternion_about_axis((counter % 100) * math.pi * 2 / 100.0, [0, 0, 1])
-    box_a.pose.orientation.x = q[0]
-    box_a.pose.orientation.y = q[1]
-    box_a.pose.orientation.z = q[2]
-    box_a.pose.orientation.w = q[3]
-    box_a.dimensions.x = 1
-    box_a.dimensions.y = 1
-    box_a.dimensions.z = 1
-    box_a.value = (counter % 100) / 100.0
-            
-    box_b = BoundingBox()
-    box_b.label = 5
-    box_b.header.stamp = now    
-    box_b.header.frame_id = frame_id
-    
-    box_b.pose.orientation.w = 1
-    box_b.pose.position.y = 2
-    box_b.dimensions.x = (counter % 10 + 1) * 0.1
-    box_b.dimensions.y = ((counter + 1) % 10 + 1) * 0.1
-    box_b.dimensions.z = ((counter + 2) % 10 + 1) * 0.1
-    box_b.value = 1 - (counter % 100) / 100.0
-    
+    #r = rospy.Rate(24)
+    #now = rospy.Time.now()
 
     box_arr = BoundingBoxArray()
-    box_arr.header.stamp = now
     box_arr.header.frame_id = frame_id
 
-    box_arr.boxes.append(box_a)
-    box_arr.boxes.append(box_b)
-    bbox_array_pub.publish(box_arr)
+    for i in range(len(location_array)):
+        box = BoundingBox()  
+        box.header.frame_id = frame_id
+        #box.label = 2    
+        #box.header.stamp = now    
+        box.pose.position.x = location_array[i][0]
+        box.pose.position.y = location_array[i][1]
+        box.pose.position.z = location_array[i][2]
 
-    r.sleep()
-    counter = counter + 1
+        #print("Location :",location_array[i][0],location_array[i][1],location_array[i][2])
+
+        q = quaternion_about_axis((counter % 100) * math.pi * 2 / 100.0, [0, 0, 1])
+        box.pose.orientation.x = q[0]
+        box.pose.orientation.y = q[1]
+        box.pose.orientation.z = q[2]
+        box.pose.orientation.w = q[3]
+
+        box.dimensions.x = 1#location_array[i][3]
+        box.dimensions.y = 1#location_array[i][4]
+        box.dimensions.z = 1#location_array[i][5]
+        box.value = (counter % 100) / 100.0        
+
+        box_arr.boxes.append(box)
+
+    #print("")
+
+    bbox_array_pub.publish(box_arr)
+    #r.sleep()
+    #counter = counter + 1
 
 def callback(input_ros_msg):
-    jsk_rviz_bbox_array("velodyne")
+
+    location_array = location_table.tolist()
+    
+    #location_array = []
+    #location_array.append([1, 1, 1, 1, 1, 1]) #pos_x, pos_y, pos_z, scale_x, scale_y, scale_z
+    #location_array.append([2, 2, 2, 1, 1, 1])
+
+    jsk_rviz_bbox_array("velodyne", location_array)
 
 
 if __name__ == "__main__":
