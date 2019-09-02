@@ -94,17 +94,12 @@ from jsk_recognition_msgs.msg import BoundingBox
 def jsk_rviz_bbox(frame_id, pos_x, pos_y, pos_z,scale_x,scale_y,scale_z ):
     counter = 0
     r = rospy.Rate(24)
-    box_a = BoundingBox()
-    
-    box_a.label = 2
-
-
     now = rospy.Time.now()
-    box_a.header.stamp = now
-
-    
+       
+    box_a = BoundingBox()    
+    box_a.label = 2   
+    box_a.header.stamp = now    
     box_a.header.frame_id = frame_id
-
     
     q = quaternion_about_axis((counter % 100) * math.pi * 2 / 100.0, [0, 0, 1])
     box_a.pose.orientation.x = q[0]
@@ -134,14 +129,9 @@ def callback(input_ros_msg):
     jsk_rviz_bbox("velodyne", pos_x, pox_y, pos_z,1,1,1)
 
 
-if __name__ == "__main__":
-    
+if __name__ == "__main__":    
     rospy.init_node('DA_people_detection', anonymous=True
-
-
-
     bbox_pub = rospy.Publisher("bbox", BoundingBox)
-
     rospy.spin()
 
 ```
