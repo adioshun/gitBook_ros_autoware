@@ -86,6 +86,8 @@ if __name__ == "__main__":
 
 ## bbox 
 
+> 한번에 한개의 box만 표현 가능 하니, 여러개의 Detection Box생성시는 **bbox Array** 사용 
+
 ```python 
 from jsk_recognition_msgs.msg import BoundingBox
 
