@@ -139,6 +139,7 @@
 
 [Understanding URDF and XACRO](https://ni.www.techfak.uni-bielefeld.de/files/URDF-XACRO.pdf): ppt
 
+[Workcell XACRO](https://industrial-training-master.readthedocs.io/en/melodic/_source/session3/Workcell-XACRO.html)
 
 ## 4. `*.world`
 
