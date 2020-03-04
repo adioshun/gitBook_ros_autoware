@@ -9,7 +9,7 @@
 
 * [README](Fundamentals/README.md)
 * [명령어](Fundamentals/Command.md)
-* [catkin\_make & catkin build](Fundamentals/catkin-make.md)
+* [빌드 시스템](Fundamentals/catkin-make.md)
 * [Programing](Fundamentals/programing.md)
   * [Topic](Fundamentals/Topic.md)
   * [Service](Fundamentals/Service.md)
@@ -59,9 +59,8 @@
 
 * [Udacity Robotics Nanodegree](udacity-robotics-nanodegree.md)
 
----
-
 ## ROS2
 
 * [README](ROS2/README.md)
 * [Apex.AI](ROS2/Apex_AI.md)
+
