@@ -74,70 +74,7 @@ echo $ROS_PACKAGE_PATH
 
 ## 3. [Sample `CMakeLists.txt`](http://www.pointclouds.org/documentation/tutorials/using_pcl_pcl_config.php)
 
-```python
-CMAKE_MINIMUM_REQUIRED (VERSION 2.6 FATAL_ERROR)
-
-SET ( SRC_FILES ground.cpp )
-SET ( EXEC_FILE ground )
-
-# 프로젝트 이름 및 버전
-PROJECT(ground)
-MESSAGE ( ${CMAKE_PROJECT_NAME} )
-#MESSAGE ( [<Type>] <메시지> ) #Type = STATUS, FATAL_ERROR
-
-
-find_package(PCL 1.8 REQUIRED)
-
-find_package(catkin REQUIRED COMPONENTS
-roscpp
-rospy
-std_msgs
-geometry_msgs
-message_generation)
-
-catkin_package()
-
-# 공통 헤더 파일 Include 디렉토리 (-I)
-include_directories(
-${PCL_INCLUDE_DIRS}
-${catkin_INCLUDE_DIRS}
-)
-
-
-#ADD_LIBRARY ( <라이브러리_이름> [STATIC|SHARED|MODULE] <소스_파일> <소스_파일> ... )
-
-# 공통 링크 라이브러리 (-l)
-# LINK_LIBRARIES( <라이브러리> <라이브러리> ... )
-
-# 공통 링크 라이브러리 디렉토리 (-L)
-
-LINK_DIRECTORIES (
-${PCL_LIBRARY_DIRS}
-${ROS_LIBRARY_DIRS}
-)
-
-
-ADD_DEFINITIONS(${PCL_DEFINITIONS})
-
-
-ADD_EXECUTABLE ( ${EXEC_FILE} ${SRC_FILES} )
-
-
-TARGET_LINK_LIBRARIES(${EXEC_FILE}
-${PCL_LIBRARIES}
-${catkin_LIBRARIES}
-)
-
-#https://www.tuwlab.com/ece/27260
-
-#.bashrc
-#export catkin_INCLUDE_DIRS="/opt/ros/melodic/include"
-#export catkin_LIBRARIES="/opt/ros/melodic/lib"
-
-#export PCL_LIBRARY="/usr/local/lib"
-#export PCL_INCLUDE_DIRS="/usr/local/include/pcl-1.9"
-```
----
+> [Cpp Snippet](https://github.com/adioshun/gitBook_Cpp_Snippet/blob/master/compiler.md)
 
 ## 2. [catkin build](https://catkin-tools.readthedocs.io/en/latest/index.html)
 
@@ -213,4 +150,4 @@ apt-get install ros-$ROS_DISTRO-velodyne
 
 
 
-> [Cpp Snippet](https://github.com/adioshun/gitBook_Cpp_Snippet/blob/master/compiler.md)
+> [에러 처리](https://github.com/adioshun/gitBook_Cpp_Snippet/blob/master/compiler.md)
